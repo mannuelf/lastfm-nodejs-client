@@ -7,11 +7,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "client"
+    "client",
     "lastfm",
     "nodejs",
-    "typescript",
+    "typescript"
   ],
   "author": "Mannuel Ferreira",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^3.2.10"
+  }
 }
