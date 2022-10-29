@@ -1,11 +1,11 @@
 {
   "name": "lastfm-nodejs-client",
   "version": "1.0.0",
-  "description": "A client for interacting with the LastFm public API",
-  "main": "./src/index.ts",
+  "description": "A client for fetching public data with username using the LastFm public API",
+  "main": "./dist/index.js",
   "scripts": {
-    "build": "tsc",
-    "dev:watch": "tsc --watch",
+    "build": "rimraf dist && tsc",
+    "dev": "tsc --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,7 +17,8 @@
   "author": "Mannuel Ferreira",
   "license": "MIT",
   "dependencies": {
-    "node-fetch": "^3.2.10"
+    "node-fetch": "^3.2.10",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.7",
