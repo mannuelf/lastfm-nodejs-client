@@ -1,3 +1,3 @@
-console.log('hello world');
+console.log('Hello World');
 
-export default {};
+export {};
