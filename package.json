@@ -1,9 +1,10 @@
 {
   "name": "lastfm-nodejs-client",
-  "version": "0.0.0",
-  "description": "A client for interacting with the LastFm API",
+  "version": "1.0.0",
+  "description": "A client for interacting with the LastFm public API",
   "main": "./src/index.ts",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
