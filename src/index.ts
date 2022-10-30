@@ -1,3 +1,6 @@
+import config from './config';
+import method from './method';
+import request from './request';
 import {
   AuthResponse,
   LovedTracksResponse,
@@ -11,7 +14,6 @@ import {
   WeeklyChartListResponse,
   WeeklyTrackChartResponse,
 } from './types';
-import request from './request';
 
 const LastFmApi = function LastFmApi() {
   /**
@@ -185,6 +187,7 @@ const LastFmApi = function LastFmApi() {
 
   return {
     auth,
+    config,
     getInfo,
     getLovedTracks,
     getRecentTracks,
@@ -195,6 +198,7 @@ const LastFmApi = function LastFmApi() {
     getWeeklyArtistChart,
     getWeeklyChartList,
     getWeeklyTrackChart,
+    method,
   };
 };
 
