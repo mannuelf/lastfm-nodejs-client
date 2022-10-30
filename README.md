@@ -2,19 +2,23 @@
 
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
 
-If you're doing node in 2022 consider PNPM, get it [here](https://pnpm.io/).
-
 ## How to use the client
 
+Install the npm package in your project.
+
 ```bash
-(p)npm install
+pnpm install
 ```
+
+Consider [PNPM](https://pnpm.io/) ▶️
 
 ### Import it
 
-```bash
+```js
 import { lastFm } from 'lastfm-nodejs-client';
 ```
+
+### Use it
 
 ```js
 const getUser = async () => {
@@ -30,22 +34,50 @@ const getUser = async () => {
 
 const user = getUser();
 
-user.name;
+console.log(user.name);
 ```
 
-### Use it
+## Developing client
 
-## Developing the client
+Written in TypeScript and compiles down to ES2015.
+
+### Postman collections
+
+A list of endpoints currently mapped to this client. Still under development, not feature complete.
+
+[View collections](https://documenter.getpostman.com/view/4217/2s8YKJELqJ) ▶️
+
+Clone repo
 
 ```bash
-pnpm install
+git clone git@github.com:mannuelf/lastfm-nodejs-client.git
 ```
+
+create `.env` file in project root.
+Requirements for environment are:
+
+```bash
+LASTFM_API_BASE_URL=""
+LASTFM_API_KEY=""
+LASTFM_APPNAME=""
+LASTFM_USER=""
+```
+
+Get it [here](https://www.last.fm/api/account/create)
+
+Develop
+
+```bash
+pnpm dev
+```
+
+Build
 
 ```bash
 pnpm build
 ```
 
-### Testing the code
+## Testing code
 
 ```bash
 pnpm test
