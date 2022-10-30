@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.2
+
+- Refactors types.d.ts to types.ts so can ship them with package and consumers can import them in their projects.
+
 ## 1.0.1
 
 - Refactors config and methods to own modules
