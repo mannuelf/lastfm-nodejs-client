@@ -3,8 +3,8 @@ import config from './config';
 
 const request = async <Parameters, Response>(
   method: string,
-  user: string = '',
-  period: string = '',
+  user: string,
+  period?: string,
   limit?: number
 ): Promise<Response> => {
   const url = `
