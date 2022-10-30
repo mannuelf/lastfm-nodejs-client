@@ -1,4 +1,4 @@
-import fetch, { RequestInit } from 'node-fetch';
+import fetch from 'node-fetch';
 import config from './config';
 
 const request = async <Parameters, Response>(

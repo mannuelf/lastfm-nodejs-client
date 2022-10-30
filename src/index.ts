@@ -10,7 +10,7 @@ import {
   WeeklyArtistChartResponse,
   WeeklyChartListResponse,
   WeeklyTrackChartResponse,
-} from './lastFm.types';
+} from './types';
 import request from './request';
 
 const LastFmApi = function LastFmApi() {
