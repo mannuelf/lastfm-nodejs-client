@@ -18,19 +18,16 @@ Consider [PNPM](https://pnpm.io/) ▶️
 import { lastFm } from 'lastfm-nodejs-client';
 ```
 
-Create a types declaration file `lastfm-nodejs-client.d.ts` in project root.
-
-```bash
-declare module 'lastfm-nodejs-client';
-
-```
-
 ### Use it
 
 ```js
+const lastFm = LastFmApi();
+const { config } = lastFm;
+const { method } = lastFm;
+
 const getUser = async () => {
   const data = await lastFm.getInfo(
-    config.method.user.getInfo,
+    method.user.getInfo,
     config.username,
     'overall',
     12
