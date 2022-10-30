@@ -80,15 +80,3 @@ Build
 ```bash
 pnpm build
 ```
-
-## Testing code
-
-```bash
-pnpm test
-```
-
-## TODO
-
-- [ ] Add types to DefinitelyTyped project
-- [ ] Write tests
-- [ ] Write more endpoints
