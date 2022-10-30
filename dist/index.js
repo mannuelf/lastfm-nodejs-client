@@ -3,6 +3,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const config_1 = __importDefault(require("./config"));
+const method_1 = __importDefault(require("./method"));
 const request_1 = __importDefault(require("./request"));
 const LastFmApi = function LastFmApi() {
     /**
@@ -110,6 +112,7 @@ const LastFmApi = function LastFmApi() {
     };
     return {
         auth,
+        config: config_1.default,
         getInfo,
         getLovedTracks,
         getRecentTracks,
@@ -120,6 +123,7 @@ const LastFmApi = function LastFmApi() {
         getWeeklyArtistChart,
         getWeeklyChartList,
         getWeeklyTrackChart,
+        method: method_1.default,
     };
 };
 exports.default = LastFmApi;
