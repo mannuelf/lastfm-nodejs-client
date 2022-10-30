@@ -1,0 +1,20 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Errors = void 0;
+var Errors;
+(function (Errors) {
+    Errors[Errors["InvalidService"] = 2] = "InvalidService";
+    Errors[Errors["InvalidMethod"] = 3] = "InvalidMethod";
+    Errors[Errors["AuthenticationFailed"] = 4] = "AuthenticationFailed";
+    Errors[Errors["Invalid format"] = 5] = "Invalid format";
+    Errors[Errors["Invalid parameters"] = 6] = "Invalid parameters";
+    Errors[Errors["InvalidResourceSpecified"] = 7] = "InvalidResourceSpecified";
+    Errors[Errors["OperationFailed"] = 8] = "OperationFailed";
+    Errors[Errors["Invalid session key"] = 9] = "Invalid session key";
+    Errors[Errors["InvalidApiKey"] = 10] = "InvalidApiKey";
+    Errors[Errors["ServiceOffline"] = 11] = "ServiceOffline";
+    Errors[Errors["InvalidMethodSignatureSupplied"] = 13] = "InvalidMethodSignatureSupplied";
+    Errors[Errors["TemporaryErrorRequest"] = 16] = "TemporaryErrorRequest";
+    Errors[Errors["SuspendedApiKey"] = 26] = "SuspendedApiKey";
+    Errors[Errors["RateLimitExceeded"] = 29] = "RateLimitExceeded";
+})(Errors = exports.Errors || (exports.Errors = {}));
