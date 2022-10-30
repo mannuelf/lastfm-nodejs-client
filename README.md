@@ -2,6 +2,10 @@
 
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
 
+## But Why?
+
+I was building scrobbles page [https://mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and I thought other might want it to.
+
 ## How to use the client
 
 Install the npm package in your project.
