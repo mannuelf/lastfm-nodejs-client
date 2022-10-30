@@ -11,7 +11,7 @@ import {
   WEEKLY_CHART_LIST_URL,
   WEEKLY_TRACK_CHART_URL,
 } from './config';
-import fetchData from './fetchData';
+import fetchData from './request';
 import {
   AuthResponse,
   LovedTracksResponse,
