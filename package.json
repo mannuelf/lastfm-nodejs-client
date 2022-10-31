@@ -1,6 +1,6 @@
 {
   "name": "lastfm-nodejs-client",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A client for fetching public data with username using the LastFm public API",
   "main": "./dist/index.js",
   "scripts": {
@@ -16,6 +16,9 @@
     "node"
   ],
   "author": "Mannuel Ferreira",
+  "maintainers": [
+    "Mannuel Ferreira"
+  ],
   "license": "MIT",
   "dependencies": {
     "node-fetch": "^3.2.10",

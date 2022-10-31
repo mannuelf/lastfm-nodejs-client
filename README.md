@@ -26,8 +26,7 @@ import { lastFm } from 'lastfm-nodejs-client';
 
 ```js
 const lastFm = LastFmApi();
-const { config } = lastFm;
-const { method } = lastFm;
+const { config, method } = lastFm;
 
 const getUser = async () => {
   const data = await lastFm.getInfo(
