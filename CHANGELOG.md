@@ -2,8 +2,8 @@
 
 ## 1.0.3
 
+- Adds types file to distribution
 - Updates readme with types imports
--
 
 ## 1.0.2
 
