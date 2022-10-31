@@ -2,10 +2,6 @@
 
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
 
-## But Why?
-
-I was building scrobbles page [https://mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and I thought other might want it to.
-
 ## How to use the client
 
 Install the npm package in your project.
@@ -18,9 +14,16 @@ Consider [PNPM](https://pnpm.io/) ▶️
 
 ### Import it
 
+Import module
+
 ```js
 import { lastFm } from 'lastfm-nodejs-client';
-import { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client/types';
+```
+
+Import types
+
+```js
+import { Artist, Track, User, WeeklyAlbum, ...} from 'lastfm-nodejs-client/types';
 ```
 
 ### Use it
@@ -47,7 +50,7 @@ console.log(user.name);
 
 ## Developing client
 
-Written in TypeScript and compiles down to ES2015.
+Written in TypeScript, compiles down to ES2015, provides the types for the lastFm entities.
 
 ### Postman collections
 
@@ -55,32 +58,41 @@ A list of endpoints currently mapped to this client. Still under development, no
 
 [View collections](https://documenter.getpostman.com/view/4217/2s8YKJELqJ) ▶️
 
-Clone repo
+## Clone repo
 
 ```bash
 git clone git@github.com:mannuelf/lastfm-nodejs-client.git
 ```
 
-create `.env` file in project root.
-Requirements for environment are:
+Create `.env` file in project root.
+Requirements for environment are at minimum a username. You do not need an API key to query the public USER entity.
+
+```bash
+LASTFM_USER=""
+```
+
+For everything else you will need:
 
 ```bash
 LASTFM_API_BASE_URL=""
 LASTFM_API_KEY=""
 LASTFM_APPNAME=""
-LASTFM_USER=""
 ```
 
-Get it [here](https://www.last.fm/api/account/create)
+Create them [here](https://www.last.fm/api/account/create).
 
-Develop
+### Develop
 
 ```bash
 pnpm dev
 ```
 
-Build
+### Build
 
 ```bash
 pnpm build
 ```
+
+### Why I built this?
+
+I was building a scrobbles page [https://mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and I thought others might want it to.

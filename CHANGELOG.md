@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.0.3
+
+- Updates readme with types imports
+-
+
 ## 1.0.2
 
 - Refactors types.d.ts to types.ts so can ship them with package and consumers can import them in their projects.
