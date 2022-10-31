@@ -64,17 +64,18 @@ A list of endpoints currently mapped to this client. Still under development, no
 git clone git@github.com:mannuelf/lastfm-nodejs-client.git
 ```
 
-Create `.env` file in project root.
-Requirements for environment are at minimum a username. You do not need an API key to query the public USER entity.
+Create `.env` file in project root:
 
-```bash
-LASTFM_USER=""
-```
-
-For everything else you will need:
+You do not need an API key to query the public USER entity, add only base url and a username to env file.
 
 ```bash
 LASTFM_API_BASE_URL=""
+LASTFM_USER=""
+```
+
+For everything else you will need to include:
+
+```bash
 LASTFM_API_KEY=""
 LASTFM_APPNAME=""
 ```
