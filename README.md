@@ -20,6 +20,7 @@ Consider [PNPM](https://pnpm.io/) ▶️
 
 ```js
 import { lastFm } from 'lastfm-nodejs-client';
+import { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client/types';
 ```
 
 ### Use it
