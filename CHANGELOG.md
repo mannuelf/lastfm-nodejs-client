@@ -1,5 +1,15 @@
 # Changelog
 
+## 1.0.5
+
+- Fix local types
+- Update readme with current way of using the types
+- adds screenshot of it in use
+
+## 1.0.4
+
+- Export types
+
 ## 1.0.3
 
 - Adds types file to distribution

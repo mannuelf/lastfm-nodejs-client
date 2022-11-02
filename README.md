@@ -23,8 +23,15 @@ import { lastFm } from 'lastfm-nodejs-client';
 Import types
 
 ```js
-import { Artist, Track, User, WeeklyAlbum, ...} from 'lastfm-nodejs-client/types';
+import {
+  Artist,
+  Track,
+  User,
+  WeeklyAlbum,
+} from 'lastfm-nodejs-client/dist/types';
 ```
+
+_Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)_
 
 ### Use it
 
@@ -43,10 +50,14 @@ const getUser = async () => {
   return user;
 };
 
-const user: User = getUser();
+const user = getUser();
 
 console.log(user.name);
 ```
+
+🚀 Gives you
+
+![user](https://res.cloudinary.com/mannuel/image/upload/v1667372693/images/typescript.png)
 
 ## Developing client
 
