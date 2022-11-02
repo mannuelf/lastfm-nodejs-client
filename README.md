@@ -43,7 +43,7 @@ const getUser = async () => {
   return user;
 };
 
-const user = getUser();
+const user: User = getUser();
 
 console.log(user.name);
 ```
