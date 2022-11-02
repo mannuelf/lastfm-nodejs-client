@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.0.6
+
+- Forking repo README update
+
 ## 1.0.5
 
 - Fix local types
