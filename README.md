@@ -63,17 +63,19 @@ console.log(user.name);
 
 Written in TypeScript, compiles down to ES2015, provides the types for the lastFm entities.
 
+## Fork repo
+
+```bash
+gh repo fork git@github.com:mannuelf/lastfm-nodejs-client.git
+```
+
 ### Postman collections
 
 A list of endpoints currently mapped to this client. Still under development, not feature complete.
 
 [View collections](https://documenter.getpostman.com/view/4217/2s8YKJELqJ) ▶️
 
-## Clone repo
-
-```bash
-git clone git@github.com:mannuelf/lastfm-nodejs-client.git
-```
+### ENV
 
 Create `.env` file in project root:
 
