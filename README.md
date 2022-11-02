@@ -66,8 +66,10 @@ Written in TypeScript, compiles down to ES2015, provides the types for the lastF
 ## Fork repo
 
 ```bash
-gh repo fork git@github.com:mannuelf/lastfm-nodejs-client.git
+gh repo fork mannuelf/lastfm-nodejs-client
 ```
+
+What's gh? [Get it here](https://cli.github.com/manual/gh_repo_fork)
 
 ### Postman collections
 
