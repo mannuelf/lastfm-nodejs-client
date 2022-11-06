@@ -20,15 +20,15 @@ Import module
 import { lastFm } from 'lastfm-nodejs-client';
 ```
 
-Import types
+Import as types
 
 ```js
-import {
+import type {
   Artist,
   Track,
   User,
   WeeklyAlbum,
-} from 'lastfm-nodejs-client/dist/types';
+} from 'lastfm-nodejs-client/src/types';
 ```
 
 _Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)_
