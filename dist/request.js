@@ -12,12 +12,11 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const node_fetch_1 = __importDefault(require("node-fetch"));
 const config_1 = __importDefault(require("./config"));
 const request = (method, user, period, limit) => __awaiter(void 0, void 0, void 0, function* () {
     const url = `
       ${config_1.default.base_url}?method=${method}${user ? '&user=' : ''}${user}${user ? '&user=' : ''}${user}${period ? '&period=' : ''}${period}&${limit ? '&limit=' : ''}${limit}&api_key=${config_1.default.api_key}&format=${config_1.default.format.json}`;
-    return (yield (0, node_fetch_1.default)(url, {
+    return (yield fetch(url, {
         headers: {
             'Content-Type': 'application/json',
         },
