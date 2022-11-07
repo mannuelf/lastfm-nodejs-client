@@ -30,7 +30,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<AuthResponse> => {
     return request(method, user, period, limit);
   };
@@ -45,7 +45,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<UserResponse> => {
     return request(method, user, period, limit);
   };
@@ -60,7 +60,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<LovedTracksResponse> => {
     return request(method, user, period, limit);
   };
@@ -75,7 +75,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<RecentTracksResponse> => {
     return request(method, user, period, limit);
   };
@@ -90,7 +90,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<TopAlbumsResponse> => {
     return request(method, user, period, limit);
   };
@@ -105,7 +105,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<TopArtistsResponse> => {
     return request(method, user, period, limit);
   };
@@ -120,7 +120,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<TopTrackResponse> => {
     return request(method, user, period, limit);
   };
@@ -135,7 +135,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<WeeklyAlbumChartResponse> => {
     return request(method, user, period, limit);
   };
@@ -150,7 +150,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<WeeklyArtistChartResponse> => {
     return request(method, user, period, limit);
   };
@@ -165,7 +165,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<WeeklyChartListResponse> => {
     return request(method, user, period, limit);
   };
@@ -180,7 +180,7 @@ const LastFmApi = function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number
+    limit: number,
   ): Promise<WeeklyTrackChartResponse> => {
     return request(method, user, period, limit);
   };

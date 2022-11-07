@@ -2,7 +2,7 @@
 
 ## 1.0.6
 
-- Downgrade node-fetch to 2.6.1
+- Downgrade node-fetch to 2.6.7
 - Repo README update
 
 ## 1.0.5

@@ -23,12 +23,7 @@ import { lastFm } from 'lastfm-nodejs-client';
 Import as types
 
 ```js
-import type {
-  Artist,
-  Track,
-  User,
-  WeeklyAlbum,
-} from 'lastfm-nodejs-client/src/types';
+import type { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client-1.0.6/@types';
 ```
 
 _Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)_
@@ -40,12 +35,7 @@ const lastFm = LastFmApi();
 const { config, method } = lastFm;
 
 const getUser = async () => {
-  const data = await lastFm.getInfo(
-    method.user.getInfo,
-    config.username,
-    'overall',
-    12
-  );
+  const data = await lastFm.getInfo(method.user.getInfo, config.username, 'overall', 12);
   const { user } = data;
   return user;
 };
