@@ -1,9 +1,14 @@
 # Changelog
 
+## 1.1.0
+
+- Downgrade node-fetch to v2.6.7
+- Do not ship separate declaration files
+- TS now exports to CommonJs modules for better support older consumers
+
 ## 1.0.6
 
-- Downgrade node-fetch to 2.6.7
-- Repo README update
+- Forking repo README update
 
 ## 1.0.5
 
