@@ -2,7 +2,8 @@
 
 ## 1.0.6
 
-- Forking repo README update
+- Downgrade node-fetch to 2.6.1
+- Repo README update
 
 ## 1.0.5
 
