@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.1.1
+
+- update function declaration
+- re-add type declartion files for source code
+
 ## 1.1.0
 
 - Downgrade node-fetch to v2.6.7
