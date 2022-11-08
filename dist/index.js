@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const config_1 = __importDefault(require("./config"));
 const method_1 = __importDefault(require("./method"));
 const request_1 = __importDefault(require("./request"));
-const LastFmApi = function LastFmApi() {
+function LastFmApi() {
     /**
      * POST: Auth - LastFM
      *
@@ -125,5 +125,5 @@ const LastFmApi = function LastFmApi() {
         getWeeklyTrackChart,
         method: method_1.default,
     };
-};
+}
 exports.default = LastFmApi;

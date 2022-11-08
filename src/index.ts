@@ -15,7 +15,7 @@ import {
   WeeklyTrackChartResponse,
 } from './types';
 
-const LastFmApi = function LastFmApi() {
+function LastFmApi() {
   /**
    * POST: Auth - LastFM
    *
@@ -200,6 +200,6 @@ const LastFmApi = function LastFmApi() {
     getWeeklyTrackChart,
     method,
   };
-};
+}
 
 export default LastFmApi;
