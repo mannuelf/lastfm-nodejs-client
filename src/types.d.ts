@@ -149,7 +149,7 @@ export interface Date {
 export interface Track {
   artist: Artist;
   streamable: string;
-  image: '';
+  image: Image[];
   mbid: string;
   album: Album;
   name: string;
