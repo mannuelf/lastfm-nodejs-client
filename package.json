@@ -1,7 +1,7 @@
 {
   "name": "lastfm-nodejs-client",
-  "version": "1.1.1",
-  "description": "A client for fetching public data with username using the LastFm public API",
+  "version": "1.1.2",
+  "description": "A NodeJS wrapper client for LastFm API. Fetching public data by username using the LastFm public API",
   "main": "./dist",
   "scripts": {
     "build": "rimraf dist && tsc",
