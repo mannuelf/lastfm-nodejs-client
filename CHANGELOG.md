@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.3
+
+- Fix incorrect type import
+
 ## 1.1.2
 
 - Fix broken type, Track image type is an array of Images.
