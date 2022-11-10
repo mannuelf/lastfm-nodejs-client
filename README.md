@@ -36,11 +36,7 @@ const { config, method } = lastFm;
 
 const getTopArtists = async () => {
   const data = await lastFm.getTopArtists(method.user.top_artists, config.username, 'overall', 200);
-
-  const { topartists } = data;
-
-  topartists.artist.map((artist) => artist.mbid);
-
+  const { topartists } = data
   return topartists;
 };
 ```
