@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- Update request method better params organization.
+
 ## 1.1.3
 
 - Fix incorrect type import
