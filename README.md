@@ -14,13 +14,13 @@ Consider [PNPM](https://pnpm.io/) ▶️
 
 ### Import it
 
-Import module
+Import the client module:
 
 ```js
 import { lastFm } from 'lastfm-nodejs-client';
 ```
 
-Import as types
+Import the Types as type:
 
 ```js
 import type { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client/@types';
@@ -34,20 +34,20 @@ _Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTy
 const lastFm = LastFmApi();
 const { config, method } = lastFm;
 
-const getUser = async () => {
-  const data = await lastFm.getInfo(method.user.getInfo, config.username, 'overall', 12);
-  const { user } = data;
-  return user;
+const getTopArtists = async () => {
+  const data = await lastFm.getTopArtists(method.user.top_artists, config.username, 'overall', 200);
+
+  const { topartists } = data;
+
+  topartists.artist.map((artist) => artist.mbid);
+
+  return topartists;
 };
-
-const user = getUser();
-
-console.log(user.name);
 ```
 
-🚀 Gives you
+🚀 Gives you:
 
-![user](https://res.cloudinary.com/mannuel/image/upload/v1667372693/images/typescript.png)
+![user](https://res.cloudinary.com/mannuel/image/upload/v1668059500/topartist.png)
 
 ## Developing client
 
