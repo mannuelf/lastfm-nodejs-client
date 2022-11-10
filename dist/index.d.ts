@@ -1,4 +1,4 @@
-import { AuthResponse, LovedTracksResponse, RecentTracksResponse, TopAlbumsResponse, TopArtistsResponse, TopTrackResponse, UserResponse, WeeklyAlbumChartResponse, WeeklyArtistChartResponse, WeeklyChartListResponse, WeeklyTrackChartResponse } from './types';
+import { AuthResponse, LovedTracksResponse, RecentTracksResponse, TopAlbumsResponse, TopArtistsResponse, TopTrackResponse, UserResponse, WeeklyAlbumChartResponse, WeeklyArtistChartResponse, WeeklyChartListResponse, WeeklyTrackChartResponse } from '../@types';
 declare function LastFmApi(): {
     auth: (method: string, user: string, period: string, limit: number) => Promise<AuthResponse>;
     config: {

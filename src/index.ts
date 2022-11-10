@@ -13,7 +13,7 @@ import {
   WeeklyArtistChartResponse,
   WeeklyChartListResponse,
   WeeklyTrackChartResponse,
-} from './types';
+} from '../@types';
 
 function LastFmApi() {
   /**
