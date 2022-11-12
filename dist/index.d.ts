@@ -1,6 +1,6 @@
 import { AuthResponse, LovedTracksResponse, RecentTracksResponse, TopAlbumsResponse, TopArtistsResponse, TopTrackResponse, UserResponse, WeeklyAlbumChartResponse, WeeklyArtistChartResponse, WeeklyChartListResponse, WeeklyTrackChartResponse } from '../@types';
 declare function LastFmApi(): {
-    auth: (method: string, user: string, period: string, limit: number) => Promise<AuthResponse>;
+    auth: (method: string, user: string, period: string, limit: string) => Promise<AuthResponse>;
     config: {
         api_key: string;
         app_name: string;
@@ -12,16 +12,16 @@ declare function LastFmApi(): {
         share_secret: string;
         username: string;
     };
-    getInfo: (method: string, user: string, period: string, limit: number) => Promise<UserResponse>;
-    getLovedTracks: (method: string, user: string, period: string, limit: number) => Promise<LovedTracksResponse>;
-    getRecentTracks: (method: string, user: string, period: string, limit: number) => Promise<RecentTracksResponse>;
-    getTopAlbums: (method: string, user: string, period: string, limit: number) => Promise<TopAlbumsResponse>;
-    getTopArtists: (method: string, user: string, period: string, limit: number) => Promise<TopArtistsResponse>;
-    getTopTracks: (method: string, user: string, period: string, limit: number) => Promise<TopTrackResponse>;
-    getWeeklyAlbumChart: (method: string, user: string, period: string, limit: number) => Promise<WeeklyAlbumChartResponse>;
-    getWeeklyArtistChart: (method: string, user: string, period: string, limit: number) => Promise<WeeklyArtistChartResponse>;
-    getWeeklyChartList: (method: string, user: string, period: string, limit: number) => Promise<WeeklyChartListResponse>;
-    getWeeklyTrackChart: (method: string, user: string, period: string, limit: number) => Promise<WeeklyTrackChartResponse>;
+    getInfo: (method: string, user: string, period: string, limit: string) => Promise<UserResponse>;
+    getLovedTracks: (method: string, user: string, period: string, limit: string) => Promise<LovedTracksResponse>;
+    getRecentTracks: (method: string, user: string, period: string, limit: string) => Promise<RecentTracksResponse>;
+    getTopAlbums: (method: string, user: string, period: string, limit: string) => Promise<TopAlbumsResponse>;
+    getTopArtists: (method: string, user: string, period: string, limit: string) => Promise<TopArtistsResponse>;
+    getTopTracks: (method: string, user: string, period: string, limit: string) => Promise<TopTrackResponse>;
+    getWeeklyAlbumChart: (method: string, user: string, period: string, limit: string) => Promise<WeeklyAlbumChartResponse>;
+    getWeeklyArtistChart: (method: string, user: string, period: string, limit: string) => Promise<WeeklyArtistChartResponse>;
+    getWeeklyChartList: (method: string, user: string, period: string, limit: string) => Promise<WeeklyChartListResponse>;
+    getWeeklyTrackChart: (method: string, user: string, period: string, limit: string) => Promise<WeeklyTrackChartResponse>;
     method: {
         auth: string;
         user: {
