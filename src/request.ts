@@ -4,7 +4,7 @@ const request = async <Parameters, Response>(
   method: string,
   user: string,
   period?: string,
-  limit?: number,
+  limit?: string,
 ): Promise<Response> => {
   const url = `
       ${config.base_url}?method=${method}${user ? '&user=' : ''}${user}${
