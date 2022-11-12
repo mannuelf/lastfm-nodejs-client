@@ -1,8 +1,9 @@
 {
   "name": "lastfm-nodejs-client",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "A NodeJS wrapper client for LastFm API. Fetching public data by username using the LastFm public API",
   "main": "./dist",
+  "type": "commonjs",
   "scripts": {
     "build": "rimraf dist && tsc",
     "dev": "tsc --watch",
@@ -26,6 +27,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.11.7",
+    "@typescript-eslint/eslint-plugin": "^5.42.1",
+    "@typescript-eslint/parser": "^5.42.1",
+    "eslint": "^8.27.0",
     "typescript": "^4.8.4"
   },
   "repository": {
