@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.1.4
+
+- Fix incorrect type on request method
+
 ## 1.1.3
 
 - Fix incorrect type import

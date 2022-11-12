@@ -30,7 +30,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<AuthResponse> => {
     return request(method, user, period, limit);
   };
@@ -45,7 +45,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<UserResponse> => {
     return request(method, user, period, limit);
   };
@@ -60,7 +60,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<LovedTracksResponse> => {
     return request(method, user, period, limit);
   };
@@ -75,7 +75,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<RecentTracksResponse> => {
     return request(method, user, period, limit);
   };
@@ -90,7 +90,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<TopAlbumsResponse> => {
     return request(method, user, period, limit);
   };
@@ -105,7 +105,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<TopArtistsResponse> => {
     return request(method, user, period, limit);
   };
@@ -120,7 +120,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<TopTrackResponse> => {
     return request(method, user, period, limit);
   };
@@ -135,7 +135,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<WeeklyAlbumChartResponse> => {
     return request(method, user, period, limit);
   };
@@ -150,7 +150,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<WeeklyArtistChartResponse> => {
     return request(method, user, period, limit);
   };
@@ -165,7 +165,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<WeeklyChartListResponse> => {
     return request(method, user, period, limit);
   };
@@ -180,7 +180,7 @@ function LastFmApi() {
     method: string,
     user: string,
     period: string,
-    limit: number,
+    limit: string,
   ): Promise<WeeklyTrackChartResponse> => {
     return request(method, user, period, limit);
   };
