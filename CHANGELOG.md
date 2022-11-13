@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.0
+
+- Swops `node-fetch` for `cross-fetch` for server and browser fetching support in one.
+
 ## 1.1.5
 
 - Fix incorrect type on request method
