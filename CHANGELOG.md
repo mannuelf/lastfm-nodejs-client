@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.2
+
+- Put log back, some APIs do get Bad Request for MBIDs that don't exist, don't have solve for this yet, so not throwing any more as it grinds future request to a halt. This is a working version.
+
 ## 1.2.1
 
 - Tidy up, removes console logs

@@ -27,7 +27,7 @@ const request = async <Response>(
     })
     .then((json) => json)
     .catch((error) => {
-      throw new Error(error);
+      console.log(error);
     })) as Response;
 };
 
