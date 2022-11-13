@@ -29,6 +29,8 @@ const request = (method, user, period, limit) => __awaiter(void 0, void 0, void 
         return res.json();
     })
         .then((json) => json)
-        .catch((error) => console.log('🔥 Uh oh...', error)));
+        .catch((error) => {
+        throw new Error(error);
+    }));
 });
 exports.default = request;
