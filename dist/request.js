@@ -30,7 +30,7 @@ const request = (method, user, period, limit) => __awaiter(void 0, void 0, void 
     })
         .then((json) => json)
         .catch((error) => {
-        throw new Error(error);
+        console.log(error);
     }));
 });
 exports.default = request;
