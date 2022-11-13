@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.2.1
+
+- Tidy up: throw error, removes console log
+
 ## 1.2.0
 
 - Swops `node-fetch` for `cross-fetch` for server and browser fetching support in one.
