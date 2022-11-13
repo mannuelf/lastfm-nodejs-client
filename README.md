@@ -1,5 +1,9 @@
 # LastFm NodeJs client
 
+[![NPM Version](https://img.shields.io/npm/v/lastfm-nodejs-client.svg?branch=main)](https://www.npmjs.com/package/lastfm-nodejs-client)
+[![Downloads Per Week](https://img.shields.io/npm/dw/lastfm-nodejs-client.svg?color=blue)](https://www.npmjs.com/package/lastfm-nodejs-client)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
 
 Fetch server side or client side, thanks to [cross-fetch](https://github.com/lquixada/cross-fetch)
