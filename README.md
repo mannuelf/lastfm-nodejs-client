@@ -2,6 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/lastfm-nodejs-client.svg?branch=main)](https://www.npmjs.com/package/lastfm-nodejs-client)
 [![Downloads Per Week](https://img.shields.io/npm/dw/lastfm-nodejs-client.svg?color=blue)](https://www.npmjs.com/package/lastfm-nodejs-client)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba3b73c24e06433fabe0efed8b43d026)](https://www.codacy.com/gh/mannuelf/lastfm-nodejs-client/dashboard?utm_source=github.com&utm_medium=referral&utm_content=mannuelf/lastfm-nodejs-client&utm_campaign=Badge_Grade)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
