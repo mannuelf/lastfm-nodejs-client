@@ -26,7 +26,9 @@ const request = async <Response>(
       return res.json();
     })
     .then((json) => json)
-    .catch((error) => console.log('🔥 Uh oh...', error))) as Response;
+    .catch((error) => {
+      throw new Error(error);
+    })) as Response;
 };
 
 export default request;
