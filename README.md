@@ -2,6 +2,8 @@
 
 A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
 
+Fetch server side or client side, thanks to [cross-fetch](https://github.com/lquixada/cross-fetch)
+
 ## How to use the client
 
 Install the npm package in your project.
