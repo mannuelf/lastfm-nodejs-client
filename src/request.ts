@@ -1,6 +1,7 @@
+import fetch from 'cross-fetch';
 import config from './config';
 
-const request = async <Parameters, Response>(
+const request = async <Response>(
   method: string,
   user: string,
   period?: string,
@@ -18,7 +19,12 @@ const request = async <Parameters, Response>(
       'Content-Type': 'application/json',
     },
   })
-    .then((res) => res.json())
+    .then((res) => {
+      if (res.status >= 400) {
+        throw new Error('Bad response from server');
+      }
+      return res.json();
+    })
     .then((json) => json)
     .catch((error) => console.log('🔥 Uh oh...', error))) as Response;
 };
