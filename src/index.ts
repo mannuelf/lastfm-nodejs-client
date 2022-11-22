@@ -26,14 +26,14 @@ function LastFmApi() {
    * Can only used once (they are consumed when a session is created).
    * @returns Auth token
    */
-  const auth = (
+  function auth(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<AuthResponse> => {
+  ): Promise<AuthResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: User profile information - LastFM
@@ -41,14 +41,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getInfo
    * @returns User profile data
    */
-  const getInfo = (
+  function getInfo(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<UserResponse> => {
+  ): Promise<UserResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Love Tracks - LastFM
@@ -56,14 +56,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getLovedTracks
    * @returns Loved Tracks;
    */
-  const getLovedTracks = (
+  function getLovedTracks(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<LovedTracksResponse> => {
+  ): Promise<LovedTracksResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Recent Tracks - LastFM
@@ -71,14 +71,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getRecentTracks
    * @returns Recent Tracks
    */
-  const getRecentTracks = (
+  function getRecentTracks(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<RecentTracksResponse> => {
+  ): Promise<RecentTracksResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Top Albums - LastFM
@@ -86,14 +86,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getTopAlbums
    * @returns Top Albums
    */
-  const getTopAlbums = (
+  function getTopAlbums(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<TopAlbumsResponse> => {
+  ): Promise<TopAlbumsResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Top Artist - LastFM
@@ -101,14 +101,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getTopArtists
    * @returns Top Artists
    */
-  const getTopArtists = (
+  function getTopArtists(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<TopArtistsResponse> => {
+  ): Promise<TopArtistsResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Top Tracks - LastFM
@@ -116,14 +116,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getTopTracks
    * @returns Top Tracks
    */
-  const getTopTracks = (
+  function getTopTracks(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<TopTrackResponse> => {
+  ): Promise<TopTrackResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Weekly album chart - LastFM
@@ -131,14 +131,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getWeeklyAlbumChart
    * @returns Weekly album chart
    */
-  const getWeeklyAlbumChart = (
+  function getWeeklyAlbumChart(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<WeeklyAlbumChartResponse> => {
+  ): Promise<WeeklyAlbumChartResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Weekly artist chart - LastFM
@@ -146,14 +146,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getWeeklyArtistChart
    * @returns Weekly artist chart
    */
-  const getWeeklyArtistChart = (
+  function getWeeklyArtistChart(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<WeeklyArtistChartResponse> => {
+  ): Promise<WeeklyArtistChartResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Weekly chart list - LastFM
@@ -161,14 +161,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getWeeklyChartList
    * @returns Weekly chart list
    */
-  const getWeeklyChartList = (
+  function getWeeklyChartList(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<WeeklyChartListResponse> => {
+  ): Promise<WeeklyChartListResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   /**
    * GET: Weekly track chart - LastFM
@@ -176,14 +176,14 @@ function LastFmApi() {
    * https://www.last.fm/api/show/user.getWeeklyTrackChart
    * @returns Weekly track chart
    */
-  const getWeeklyTrackChart = (
+  function getWeeklyTrackChart(
     method: string,
     user: string,
     period: string,
     limit: string,
-  ): Promise<WeeklyTrackChartResponse> => {
+  ): Promise<WeeklyTrackChartResponse> {
     return request(method, user, period, limit);
-  };
+  }
 
   return {
     auth,
