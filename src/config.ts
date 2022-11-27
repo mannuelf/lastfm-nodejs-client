@@ -1,8 +1,6 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-console.log(process.env);
-
 export default {
   api_key: `${process.env.LASTFM_API_KEY}`,
   app_name: `${process.env.LASTFM_APPNAME}`,
