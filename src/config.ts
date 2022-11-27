@@ -1,3 +1,8 @@
+import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
+dotenv.config();
+
+console.log(process.env);
+
 export default {
   api_key: `${process.env.LASTFM_API_KEY}`,
   app_name: `${process.env.LASTFM_APPNAME}`,

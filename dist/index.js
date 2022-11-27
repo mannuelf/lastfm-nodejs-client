@@ -17,99 +17,99 @@ function LastFmApi() {
      * Can only used once (they are consumed when a session is created).
      * @returns Auth token
      */
-    const auth = (method, user, period, limit) => {
+    function auth(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: User profile information - LastFM
      *
      * https://www.last.fm/api/show/user.getInfo
      * @returns User profile data
      */
-    const getInfo = (method, user, period, limit) => {
+    function getInfo(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Love Tracks - LastFM
      *
      * https://www.last.fm/api/show/user.getLovedTracks
      * @returns Loved Tracks;
      */
-    const getLovedTracks = (method, user, period, limit) => {
+    function getLovedTracks(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Recent Tracks - LastFM
      *
      * https://www.last.fm/api/show/user.getRecentTracks
      * @returns Recent Tracks
      */
-    const getRecentTracks = (method, user, period, limit) => {
+    function getRecentTracks(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Top Albums - LastFM
      *
      * https://www.last.fm/api/show/user.getTopAlbums
      * @returns Top Albums
      */
-    const getTopAlbums = (method, user, period, limit) => {
+    function getTopAlbums(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Top Artist - LastFM
      *
      * https://www.last.fm/api/show/user.getTopArtists
      * @returns Top Artists
      */
-    const getTopArtists = (method, user, period, limit) => {
+    function getTopArtists(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Top Tracks - LastFM
      *
      * https://www.last.fm/api/show/user.getTopTracks
      * @returns Top Tracks
      */
-    const getTopTracks = (method, user, period, limit) => {
+    function getTopTracks(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Weekly album chart - LastFM
      *
      * https://www.last.fm/api/show/user.getWeeklyAlbumChart
      * @returns Weekly album chart
      */
-    const getWeeklyAlbumChart = (method, user, period, limit) => {
+    function getWeeklyAlbumChart(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Weekly artist chart - LastFM
      *
      * https://www.last.fm/api/show/user.getWeeklyArtistChart
      * @returns Weekly artist chart
      */
-    const getWeeklyArtistChart = (method, user, period, limit) => {
+    function getWeeklyArtistChart(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Weekly chart list - LastFM
      *
      * https://www.last.fm/api/show/user.getWeeklyChartList
      * @returns Weekly chart list
      */
-    const getWeeklyChartList = (method, user, period, limit) => {
+    function getWeeklyChartList(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     /**
      * GET: Weekly track chart - LastFM
      *
      * https://www.last.fm/api/show/user.getWeeklyTrackChart
      * @returns Weekly track chart
      */
-    const getWeeklyTrackChart = (method, user, period, limit) => {
+    function getWeeklyTrackChart(method, user, period, limit) {
         return (0, request_1.default)(method, user, period, limit);
-    };
+    }
     return {
         auth,
         config: config_1.default,
