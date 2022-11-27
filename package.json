@@ -6,7 +6,8 @@
   "scripts": {
     "build": "rimraf dist && tsc",
     "clean": "rimraf dist",
-    "dev": "npm run clean && tsc --watch --project tsconfig.dev.json"
+    "dev": "npm run clean && tsc --watch --project tsconfig.dev.json",
+    "test": "npx playwright test --reporter=list"
   },
   "keywords": [
     "client",
