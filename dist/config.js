@@ -25,7 +25,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
-console.log(process.env);
 exports.default = {
     api_key: `${process.env.LASTFM_API_KEY}`,
     app_name: `${process.env.LASTFM_APPNAME}`,

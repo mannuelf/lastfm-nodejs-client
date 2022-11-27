@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.3
+
+- Adds tests, using Playwright
+- Adds dotenv npm module as a new dependency
+
 ## 1.2.2
 
 - Put log back, some APIs do get Bad Request for MBIDs that don't exist, don't have solve for this yet, so not throwing any more as it grinds future request to a halt. This is a working version.
