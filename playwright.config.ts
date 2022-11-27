@@ -1,4 +1,4 @@
-import type { PlaywrightTestConfig } from '@playwright/test';
+import { devices, PlaywrightTestConfig } from '@playwright/test';
 import * as dotenv from 'dotenv'; // see https://github.com/motdotla/dotenv#how-do-i-use-dotenv-with-import
 dotenv.config();
 
@@ -19,13 +19,19 @@ const config: PlaywrightTestConfig = {
   use: {
     actionTimeout: 0,
     trace: 'on-first-retry',
+    headless: true,
   },
-  projects: [],
+  projects: [
+    {
+      name: 'chromium',
+      use: { ...devices['Desktop Chrome'] },
+    },
+  ],
   // outputDir: 'test-results/',
-  webServer: {
-    command: 'npm run dev',
-    port: 3000,
-  },
+  // webServer: {
+  //   command: 'npm run dev',
+  //   port: 3000,
+  // },
 };
 
 export default config;
