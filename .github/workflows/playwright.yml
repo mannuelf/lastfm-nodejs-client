@@ -22,8 +22,8 @@ jobs:
         run: npx playwright install --with-deps
       - name: Creates environment variables
         run: |
-          echo "LASTFM_API_BASE_URL: ${LASTFM_API_BASE_URL}"
-          echo "LASTFM_API_KEY: ${LASTFM_API_KEY}"
+          echo "LASTFM_API_BASE_URL: https://ws.audioscrobbler.com/2.0/"
+          echo "LASTFM_API_KEY: abcdefghijklmnopqrstuvxyz"
       - name: Run Playwright tests
         run: pnpm dlx playwright test
       - uses: actions/upload-artifact@v3
