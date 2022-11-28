@@ -20,6 +20,10 @@ jobs:
         run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Creates environment variables
+        run: |
+          echo "LASTFM_API_BASE_URL: ${LASTFM_API_BASE_URL}"
+          echo "LASTFM_API_KEY: ${LASTFM_API_KEY}"
       - name: Run Playwright tests
         run: pnpm dlx playwright test
       - uses: actions/upload-artifact@v3
