@@ -8,7 +8,7 @@ dotenv.config({ path: path.resolve(__dirname, '..', process.env.CI ? '.env.examp
 const { LASTFM_API_BASE_URL, LASTFM_API_KEY } = process.env;
 
 let environmentVarWarning =
-  '❗ No environment variable found, use the .env.example file to create your own .env file with required properties adn values.';
+  '❗ No environment variable found, use the .env.example file to create your own .env file with required properties and values.';
 
 test.describe('Environment variables present and configured', async () => {
   test('LASTFM_API_BASE_URL is present', async () => {
