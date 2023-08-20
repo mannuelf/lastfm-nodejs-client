@@ -2,12 +2,11 @@
 
 ## Supported Versions
 
-Dependebot alerts have been enabled and security patches to any dependecies will be brought to light and merged manually by maintainer.
+Dependabot alerts have been enabled and security patches to any dependencies will be brought to light and merged manually by maintainer.
 
 | Version | Supported          |
 | ------- | ------------------ |
 | 1.0.x   | :white_check_mark: |
-
 
 ## Reporting a Vulnerability
 
