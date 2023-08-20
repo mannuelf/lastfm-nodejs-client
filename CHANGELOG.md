@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.4
+
+- Updates npm dependencies
+- Refactors request methods options and updates all callsites.
+- Add nvmrc file for easy switching node version.
+
 ## 1.2.3
 
 - Adds tests, using Playwright
