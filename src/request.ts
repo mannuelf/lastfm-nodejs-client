@@ -21,19 +21,22 @@ const buildUrl = (options: RequestOptions): string => {
 
 const request = async <Response>(options: RequestOptions): Promise<Response> => {
   const url = buildUrl(options);
-  
-  const response = await fetch(url, {
+
+  return (await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
     },
-  });
-
-  if (!response.ok) {
-    throw new Error('Bad response from server');
-  }
-
-  const json = await response.json();
-  return json as Response;
+  })
+    .then((res) => {
+      if (res.status >= 400) {
+        throw new Error('Bad response from server');
+      }
+      return res.json();
+    })
+    .then((json) => json)
+    .catch((error) => {
+      console.log(error);
+    })) as Response;
 };
 
 export default request;
