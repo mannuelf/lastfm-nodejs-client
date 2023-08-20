@@ -20,13 +20,15 @@ jobs:
         run: pnpm install
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
+      - name: Install @playwright/test package
+        run: pnpm add -D @playwright/test
       - name: Creates environment variables
         run: |
           echo "LASTFM_API_BASE_URL: https://ws.audioscrobbler.com/2.0/"
           echo "LASTFM_API_KEY: abcdefghijklmnopqrstuvxyz"
       - name: Run Playwright tests
         run: pnpm dlx playwright test
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v2
         if: always()
         with:
           name: playwright-report
