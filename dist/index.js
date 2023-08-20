@@ -18,7 +18,13 @@ function LastFmApi() {
      * @returns Auth token
      */
     function auth(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: User profile information - LastFM
@@ -27,7 +33,13 @@ function LastFmApi() {
      * @returns User profile data
      */
     function getInfo(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Love Tracks - LastFM
@@ -36,7 +48,13 @@ function LastFmApi() {
      * @returns Loved Tracks;
      */
     function getLovedTracks(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Recent Tracks - LastFM
@@ -45,7 +63,13 @@ function LastFmApi() {
      * @returns Recent Tracks
      */
     function getRecentTracks(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Top Albums - LastFM
@@ -54,7 +78,13 @@ function LastFmApi() {
      * @returns Top Albums
      */
     function getTopAlbums(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Top Artist - LastFM
@@ -63,7 +93,13 @@ function LastFmApi() {
      * @returns Top Artists
      */
     function getTopArtists(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Top Tracks - LastFM
@@ -72,7 +108,13 @@ function LastFmApi() {
      * @returns Top Tracks
      */
     function getTopTracks(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Weekly album chart - LastFM
@@ -81,7 +123,13 @@ function LastFmApi() {
      * @returns Weekly album chart
      */
     function getWeeklyAlbumChart(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Weekly artist chart - LastFM
@@ -90,7 +138,13 @@ function LastFmApi() {
      * @returns Weekly artist chart
      */
     function getWeeklyArtistChart(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Weekly chart list - LastFM
@@ -99,7 +153,13 @@ function LastFmApi() {
      * @returns Weekly chart list
      */
     function getWeeklyChartList(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     /**
      * GET: Weekly track chart - LastFM
@@ -108,7 +168,13 @@ function LastFmApi() {
      * @returns Weekly track chart
      */
     function getWeeklyTrackChart(method, user, period, limit) {
-        return (0, request_1.default)(method, user, period, limit);
+        const options = {
+            method,
+            user,
+            period,
+            limit,
+        };
+        return (0, request_1.default)(options);
     }
     return {
         auth,

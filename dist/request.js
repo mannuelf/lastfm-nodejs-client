@@ -14,9 +14,21 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const cross_fetch_1 = __importDefault(require("cross-fetch"));
 const config_1 = __importDefault(require("./config"));
-const request = (method, user, period, limit) => __awaiter(void 0, void 0, void 0, function* () {
-    const url = `
-      ${config_1.default.base_url}?method=${method}${user ? '&user=' : ''}${user}${user ? '&user=' : ''}${user}${period ? '&period=' : ''}${period}&${limit ? '&limit=' : ''}${limit}&api_key=${config_1.default.api_key}&format=${config_1.default.format.json}`;
+const buildUrl = (options) => {
+    const params = new URLSearchParams();
+    params.append('method', options.method);
+    if (options.user)
+        params.append('user', options.user);
+    if (options.period)
+        params.append('period', options.period);
+    if (options.limit)
+        params.append('limit', options.limit);
+    params.append('api_key', config_1.default.api_key);
+    params.append('format', config_1.default.format.json);
+    return `${config_1.default.base_url}?${params.toString()}`;
+};
+const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
+    const url = buildUrl(options);
     return (yield (0, cross_fetch_1.default)(url, {
         headers: {
             'Content-Type': 'application/json',
