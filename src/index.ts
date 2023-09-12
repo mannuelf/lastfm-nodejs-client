@@ -15,6 +15,19 @@ import {
   WeeklyTrackChartResponse,
 } from '../@types';
 
+function createOptions(
+  method: string,
+  user: string,
+  period: string,
+  limit: string) {
+  return {
+    method,
+    user,
+    period,
+    limit,
+  }
+}
+
 function LastFmApi() {
   /**
    * POST: Auth - LastFM
@@ -32,12 +45,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<AuthResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<AuthResponse>(options);
   }
 
@@ -53,12 +61,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<UserResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<UserResponse>(options);
   }
 
@@ -74,12 +77,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<LovedTracksResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<LovedTracksResponse>(options);
   }
 
@@ -95,12 +93,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<RecentTracksResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<RecentTracksResponse>(options);
   }
 
@@ -116,12 +109,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<TopAlbumsResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<TopAlbumsResponse>(options);
   }
 
@@ -137,12 +125,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<TopArtistsResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<TopArtistsResponse>(options);
   }
 
@@ -158,12 +141,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<TopTrackResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<TopTrackResponse>(options);
   }
 
@@ -179,12 +157,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<WeeklyAlbumChartResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<WeeklyAlbumChartResponse>(options);
   }
 
@@ -200,12 +173,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<WeeklyArtistChartResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<WeeklyArtistChartResponse>(options);
   }
 
@@ -221,12 +189,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<WeeklyChartListResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<WeeklyChartListResponse>(options);
   }
 
@@ -242,12 +205,7 @@ function LastFmApi() {
     period: string,
     limit: string,
   ): Promise<WeeklyTrackChartResponse> {
-    const options = {
-      method,
-      user,
-      period,
-      limit,
-    }
+    const options = createOptions(method, user, period, limit);
     return request<WeeklyTrackChartResponse>(options);
   }
 
