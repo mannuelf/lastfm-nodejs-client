@@ -110,3 +110,7 @@ pnpm build
 ### Why I built this?
 
 I was building a scrobbles page [https://mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and I thought others might want it to.
+
+### TODO
+
+- move types into [DefinitelyTyped](https://github.com/mannuelf/DefinitelyTyped)
