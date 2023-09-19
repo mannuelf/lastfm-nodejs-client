@@ -14,6 +14,23 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const cross_fetch_1 = __importDefault(require("cross-fetch"));
 const config_1 = __importDefault(require("./config"));
+var ErrorResponse;
+(function (ErrorResponse) {
+    ErrorResponse[ErrorResponse["InvalidService"] = 2] = "InvalidService";
+    ErrorResponse[ErrorResponse["InvalidMethod"] = 3] = "InvalidMethod";
+    ErrorResponse[ErrorResponse["AuthenticationFailed"] = 4] = "AuthenticationFailed";
+    ErrorResponse[ErrorResponse["InvalidFormat"] = 5] = "InvalidFormat";
+    ErrorResponse[ErrorResponse["InvalidParameters"] = 6] = "InvalidParameters";
+    ErrorResponse[ErrorResponse["InvalidResource"] = 7] = "InvalidResource";
+    ErrorResponse[ErrorResponse["OperationFailed"] = 8] = "OperationFailed";
+    ErrorResponse[ErrorResponse["InvalidSessionKey"] = 9] = "InvalidSessionKey";
+    ErrorResponse[ErrorResponse["InvalidAPIKey"] = 10] = "InvalidAPIKey";
+    ErrorResponse[ErrorResponse["ServiceOffline"] = 11] = "ServiceOffline";
+    ErrorResponse[ErrorResponse["InvalidMethodSignature"] = 13] = "InvalidMethodSignature";
+    ErrorResponse[ErrorResponse["TemporaryError"] = 16] = "TemporaryError";
+    ErrorResponse[ErrorResponse["SuspendedAPIKey"] = 26] = "SuspendedAPIKey";
+    ErrorResponse[ErrorResponse["RateLimitExceeded"] = 29] = "RateLimitExceeded";
+})(ErrorResponse || (ErrorResponse = {}));
 const buildUrl = (options) => {
     const params = new URLSearchParams();
     params.append('method', options.method);
@@ -35,10 +52,74 @@ const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
         },
     })
         .then((res) => {
-        if (res.status >= 400) {
-            throw new Error('Bad response from server');
+        switch (res.status) {
+            case 200: {
+                return res.json();
+            }
+            case 400: {
+                throw new Error('Bad request');
+            }
+            case 401: {
+                throw new Error('Unauthorized');
+            }
+            case 403: {
+                throw new Error('Forbidden');
+            }
+            case 404: {
+                throw new Error('Not found');
+            }
+            case 500: {
+                throw new Error('Internal server error');
+            }
+            case 503: {
+                throw new Error('Service unavailable');
+            }
+            case ErrorResponse.InvalidAPIKey: {
+                throw new Error('Invalid API key');
+            }
+            case ErrorResponse.InvalidMethod: {
+                throw new Error('Invalid method');
+            }
+            case ErrorResponse.InvalidParameters: {
+                throw new Error('Invalid parameters');
+            }
+            case ErrorResponse.InvalidResource: {
+                throw new Error('Invalid resource');
+            }
+            case ErrorResponse.InvalidSessionKey: {
+                throw new Error('Invalid session key');
+            }
+            case ErrorResponse.InvalidService: {
+                throw new Error('Invalid service');
+            }
+            case ErrorResponse.OperationFailed: {
+                throw new Error('Operation failed');
+            }
+            case ErrorResponse.RateLimitExceeded: {
+                throw new Error('Rate limit exceeded');
+            }
+            case ErrorResponse.ServiceOffline: {
+                throw new Error('Service offline');
+            }
+            case ErrorResponse.SuspendedAPIKey: {
+                throw new Error('Suspended API key');
+            }
+            case ErrorResponse.TemporaryError: {
+                throw new Error('Temporary error');
+            }
+            case ErrorResponse.AuthenticationFailed: {
+                throw new Error('Authentication failed');
+            }
+            case ErrorResponse.InvalidFormat: {
+                throw new Error('Invalid format');
+            }
+            case ErrorResponse.InvalidMethodSignature: {
+                throw new Error('Invalid method signature');
+            }
+            default: {
+                throw new Error('Unknown error');
+            }
         }
-        return res.json();
     })
         .then((json) => json)
         .catch((error) => {
