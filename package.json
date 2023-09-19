@@ -27,10 +27,10 @@
     "rimraf": "^5.0.1"
   },
   "devDependencies": {
-    "@playwright/test": "^1.37.1",
-    "@types/node": "^20.6.0",
-    "typescript": "^5.2.2",
-    "bun-types": "latest"
+    "@playwright/test": "^1.38.0",
+    "@types/node": "^20.6.2",
+    "bun-types": "latest",
+    "typescript": "^5.2.2"
   },
   "repository": {
     "type": "git",
