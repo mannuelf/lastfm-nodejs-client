@@ -21,7 +21,10 @@ devDependencies:
     version: 1.37.1
   '@types/node':
     specifier: ^20.6.0
-    version: 20.6.0
+    version: 20.6.2
+  bun-types:
+    specifier: latest
+    version: 1.0.2
   typescript:
     specifier: ^5.2.2
     version: 5.2.2
@@ -52,14 +55,14 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
-      '@types/node': 20.6.0
+      '@types/node': 20.6.2
       playwright-core: 1.37.1
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /@types/node@20.6.0:
-    resolution: {integrity: sha512-najjVq5KN2vsH2U/xyh2opaSEz6cZMR2SetLIlxlj08nOcmPOemJmUK2o4kUzfLqfrWE0PIrNeE16XhYDd3nqg==}
+  /@types/node@20.6.2:
+    resolution: {integrity: sha512-Y+/1vGBHV/cYk6OI1Na/LHzwnlNCAfU3ZNGrc1LdRe/LAIbdDPTTv/HU3M7yXN448aTVDq3eKRm2cg7iKLb8gw==}
     dev: true
 
   /ansi-regex@5.0.1:
@@ -93,6 +96,10 @@ packages:
     dependencies:
       balanced-match: 1.0.2
     dev: false
+
+  /bun-types@1.0.2:
+    resolution: {integrity: sha512-yqBp2SX9cqr5/GReb56uCfM+YP+Hntx3XPjbqX1VJXqOBu+Yqw8iWRFLKFIsz9uEfykLgflhramQ8a5Jgo+Tlg==}
+    dev: true
 
   /color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
