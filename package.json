@@ -29,7 +29,8 @@
   "devDependencies": {
     "@playwright/test": "^1.37.1",
     "@types/node": "^20.6.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "bun-types": "latest"
   },
   "repository": {
     "type": "git",
