@@ -11,9 +11,7 @@ import request from './request';
 export function getInfo(
   method: string,
   user: string,
-  period: string,
-  limit: string,
 ): Promise<UserResponse> {
-  const options = createOptions(method, user, period, limit);
+  const options = createOptions(method, user);
   return request<UserResponse>(options);
 }

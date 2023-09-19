@@ -374,19 +374,19 @@ export interface method {
   };
 }
 
-export enum Errors {
-  'InvalidService' = 2,
-  'InvalidMethod' = 3,
-  'AuthenticationFailed' = 4,
-  'Invalid format' = 5,
-  'Invalid parameters' = 6,
-  'InvalidResourceSpecified' = 7,
-  'OperationFailed' = 8,
-  'Invalid session key' = 9,
-  'InvalidApiKey' = 10,
-  'ServiceOffline' = 11,
-  'InvalidMethodSignatureSupplied' = 13,
-  'TemporaryErrorRequest' = 16,
-  'SuspendedApiKey' = 26,
-  'RateLimitExceeded' = 29,
+export enum ErrorResponse {
+    InvalidService = 2,
+    InvalidMethod = 3,
+    AuthenticationFailed = 4,
+    InvalidFormat = 5,
+    InvalidParameters = 6,
+    InvalidResource = 7,
+    OperationFailed = 8,
+    InvalidSessionKey = 9,
+    InvalidAPIKey = 10,
+    ServiceOffline = 11,
+    InvalidMethodSignature = 13,
+    TemporaryError = 16,
+    SuspendedAPIKey = 26,
+    RateLimitExceeded = 29
 }

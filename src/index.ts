@@ -12,7 +12,7 @@ import { getWeeklyChartList } from './getWeeklyChartList';
 import { getWeeklyTrackChart } from './getWeeklyTrackChart';
 import method from './method';
 
-export function LastFmApi() {
+export default function LastFmApi() {
   return {
     auth,
     config,
