@@ -23,10 +23,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.config = void 0;
 const dotenv = __importStar(require("dotenv"));
 dotenv.config();
 ;
-exports.default = {
+/**
+ * @description Stores the Last.fm API key, app name, base url, format, shared secret, and username.
+ * Simply add a .env file to the root of the project and add the following:
+ * LASTFM_API_KEY=your_api_key
+ * LASTFM_APPNAME=your_app_name
+ * LASTFM_API_BASE_URL=your_base_url
+ * LASTFM_SHARED_SECRET=your_shared_secret
+ * LASTFM_USER=your_username
+ */
+exports.config = {
     api_key: `${process.env.LASTFM_API_KEY}`,
     app_name: `${process.env.LASTFM_APPNAME}`,
     base_url: `${process.env.LASTFM_API_BASE_URL}`,

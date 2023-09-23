@@ -7,6 +7,7 @@
     "build": "rimraf dist && tsc",
     "clean": "rimraf dist",
     "dev": "npm run clean && tsc --watch --project tsconfig.dev.json",
+    "publish": "npm run build && npm publish --access public",
     "test": "npx playwright test --reporter=list"
   },
   "keywords": [

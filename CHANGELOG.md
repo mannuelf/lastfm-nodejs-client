@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.0
+
+- update all api functions from snake case to camel case.
+
 ## 1.3.0
 
 - Updates npm dependencies.

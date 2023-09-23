@@ -1,5 +1,5 @@
 import fetch from 'cross-fetch';
-import config from './config';
+import { config } from './config';
 
 interface RequestOptions {
   method: string;
@@ -49,6 +49,10 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
     },
   })
     .then((res) => {
+      if(!res.ok) {
+        throw new Error(res.statusText);
+      }
+
       switch (res.status) {
         case 200: {
           return res.json();
@@ -122,7 +126,7 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
     })
     .then((json) => json)
     .catch((error) => {
-      console.log(error);
+      console.log('🚨 error:', error);
     })) as Response;
 };
 

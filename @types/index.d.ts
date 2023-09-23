@@ -108,7 +108,7 @@ export type Artist = {
     rank: number;
   };
   cover: ArtistImage;
-  image?: string;
+  image?: Image[];
   mbid: string;
   name: string;
   playcount: number;
@@ -278,7 +278,7 @@ export interface WeeklyTrackChartAttr2 {
 }
 
 export const LastFmApi: () => {
-  auth: (method: string, user: string, period: string, limit: number) => Promise<AuthResponse>;
+  auth: (method: string, user: string) => Promise<AuthResponse>;
   config: {
     api_key: string;
     app_name: string;
@@ -290,7 +290,7 @@ export const LastFmApi: () => {
     share_secret: string;
     username: string;
   };
-  getInfo: (method: string, user: string, period: string, limit: number) => Promise<UserResponse>;
+  getInfo: (method: string, user: string) => Promise<UserResponse>;
   getLovedTracks: (
     method: string,
     user: string,

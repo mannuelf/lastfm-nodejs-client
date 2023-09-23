@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const cross_fetch_1 = __importDefault(require("cross-fetch"));
-const config_1 = __importDefault(require("./config"));
+const config_1 = require("./config");
 var ErrorResponse;
 (function (ErrorResponse) {
     ErrorResponse[ErrorResponse["InvalidService"] = 2] = "InvalidService";
@@ -40,9 +40,9 @@ const buildUrl = (options) => {
         params.append('period', options.period);
     if (options.limit)
         params.append('limit', options.limit);
-    params.append('api_key', config_1.default.api_key);
-    params.append('format', config_1.default.format.json);
-    return `${config_1.default.base_url}?${params.toString()}`;
+    params.append('api_key', config_1.config.api_key);
+    params.append('format', config_1.config.format.json);
+    return `${config_1.config.base_url}?${params.toString()}`;
 };
 const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
     const url = buildUrl(options);
@@ -52,6 +52,9 @@ const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
         },
     })
         .then((res) => {
+        if (!res.ok) {
+            throw new Error(res.statusText);
+        }
         switch (res.status) {
             case 200: {
                 return res.json();
@@ -123,7 +126,7 @@ const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
     })
         .then((json) => json)
         .catch((error) => {
-        console.log(error);
+        console.log('🚨 error:', error);
     }));
 });
 exports.default = request;

@@ -1,5 +1,5 @@
 import { auth } from './auth';
-import config from './config';
+import { config } from './config';
 import { getInfo } from './getInfo';
 import { getLovedTracks } from './getLovedTracks';
 import { getRecentTracks } from './getRecentTracks';
@@ -10,7 +10,7 @@ import { getWeeklyAlbumChart } from './getWeeklyAlbumChart';
 import { getWeeklyArtistChart } from './getWeeklyArtistChart';
 import { getWeeklyChartList } from './getWeeklyChartList';
 import { getWeeklyTrackChart } from './getWeeklyTrackChart';
-import method from './method';
+import { method } from './method';
 
 export default function LastFmApi() {
   return {
