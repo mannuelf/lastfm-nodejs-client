@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.2
+
+- bug, release dist
+
 ## 1.4.1
 
 - export esm modules modern js only.
