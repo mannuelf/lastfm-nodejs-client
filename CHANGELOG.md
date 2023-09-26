@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.4.1
+
+- export esm modules modern js only.
+- add all dts and dts map files to dist
+- adds lastfm types to dist
+
 ## 1.4.0
 
 - update all api functions from snake case to camel case.
