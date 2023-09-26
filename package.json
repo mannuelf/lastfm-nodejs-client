@@ -4,7 +4,7 @@
   "description": "A NodeJS wrapper client for LastFm API. Fetching public data by username using the LastFm public API",
   "main": "./dist",
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "rimraf dist && tsc && cp -r @types/ dist/@types/",
     "clean": "rimraf dist",
     "dev": "npm run clean && tsc --watch --project tsconfig.dev.json",
     "publish": "npm run build && npm publish --access public",
