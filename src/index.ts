@@ -12,20 +12,20 @@ import { getWeeklyChartList } from './getWeeklyChartList';
 import { getWeeklyTrackChart } from './getWeeklyTrackChart';
 import { method } from './method';
 
-export default function LastFmApi() {
-  return {
-    auth,
-    config,
-    getInfo,
-    getLovedTracks,
-    getRecentTracks,
-    getTopAlbums,
-    getTopArtists,
-    getTopTracks,
-    getWeeklyAlbumChart,
-    getWeeklyArtistChart,
-    getWeeklyChartList,
-    getWeeklyTrackChart,
-    method,
-  };
-}
+const LastFmApi = () => ({
+  auth,
+  config,
+  getInfo,
+  getLovedTracks,
+  getRecentTracks,
+  getTopAlbums,
+  getTopArtists,
+  getTopTracks,
+  getWeeklyAlbumChart,
+  getWeeklyArtistChart,
+  getWeeklyChartList,
+  getWeeklyTrackChart,
+  method,
+})
+
+export default LastFmApi;
