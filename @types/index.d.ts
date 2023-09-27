@@ -8,7 +8,7 @@ export interface LovedTracksResponse {
 
 export interface LovedTracks {
   track: Track[];
-  '@attr': Attr;
+  '@attr': AttrNowPlaying;
 }
 export interface TopAlbumsResponse {
   topalbums: TopAlbums;
@@ -20,7 +20,7 @@ export interface TopTrackResponse {
 
 export interface TopTracks {
   track: Track[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface UserResponse {
@@ -33,7 +33,7 @@ export interface RecentTracksResponse {
 
 export interface RecentTracks {
   track: Track[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface LoveTracksResponse {
@@ -42,14 +42,14 @@ export interface LoveTracksResponse {
 
 export interface LovedTracks {
   track: Track[];
-  '@attr': Attr;
+  '@attr': AttrNowPlaying;
 }
 export interface FriendsResponse {
   friends: Friends;
 }
 
 export interface Friends {
-  '@attr': Attr;
+  '@attr': AttrNowPlaying;
   user: User[];
 }
 
@@ -59,7 +59,7 @@ export interface TopArtistsResponse {
 
 export interface TopArtists {
   artist: Artist[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface WeeklyArtistChartResponse {
@@ -68,7 +68,7 @@ export interface WeeklyArtistChartResponse {
 
 export interface WeeklyArtistChart {
   artist: Artist[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface WeeklyAlbumChartResponse {
@@ -80,7 +80,7 @@ export interface WeeklyAlbumChart {
   '@attr': WeeklyalbumChartAttr;
 }
 
-export type WeeklyAlbum = {
+export interface WeeklyAlbum {
   artist: {
     mbid: string;
     '#text': string;
@@ -132,12 +132,14 @@ export interface ArtistImage {
   playcount: number;
 }
 
-export interface Album {
-  mbid: string;
-  '#text': string;
-}
+export interface Album extends Track {
+  album: Album;
+  artist: Artist;
+  name: string;
+  url: string
+};
 
-export interface Attr {
+export interface AttrNowPlaying {
   nowplaying: string;
 }
 
@@ -147,18 +149,20 @@ export interface Date {
 }
 
 export interface Track {
-  artist: Artist;
-  streamable: string;
-  image: Image[];
-  mbid: string;
+  '@attr'?: AttrRank;
   album: Album;
+  artist: Artist;  
+  date?: Date;
+  duration?: string;
+  image?: Image[];
+  mbid: string;
   name: string;
-  '@attr': Attr;
+  playcount?: string;
+  streamable?: string;
   url: string;
-  date: Date;
 }
 
-export interface Attr2 {
+export interface AttrLimit {
   user: string;
   totalPages: string;
   page: string;
@@ -168,7 +172,7 @@ export interface Attr2 {
 
 export interface RecentTracks {
   track: Track[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface Image {
@@ -202,7 +206,7 @@ export interface User {
 
 export interface TopAlbums {
   album: Album[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
 export interface WeeklyArtistChartResponse {
@@ -211,14 +215,14 @@ export interface WeeklyArtistChartResponse {
 
 export interface WeeklyArtistChart {
   artist: Artist[];
-  '@attr': Attr2;
+  '@attr': AttrLimit;
 }
 
-export interface Attr1 {
-  rank: string;
+export interface AttrRank {
+  rank?: string;
 }
 
-export interface Attr2 {
+export interface AttrLimit {
   from: string;
   user: string;
   to: string;
@@ -249,7 +253,7 @@ export interface WeeklyTrackChartResponse {
 
 export interface WeeklyTrackChart {
   track: Track[];
-  '@attr': WeeklyTrackChartAttr2;
+  '@attr': AttrLimit;
 }
 
 export interface WeeklyTrackChartTrack {
@@ -258,120 +262,13 @@ export interface WeeklyTrackChartTrack {
   mbid: string;
   url: string;
   name: string;
-  '@attr': Attr;
+  '@attr': AttrNowPlaying;
   playcount: string;
 }
 
 export interface WeeklyTrackChartArtist {
   mbid: string;
   '#text': string;
-}
-
-export interface WeeklyTrackChartAttr {
-  rank: string;
-}
-
-export interface WeeklyTrackChartAttr2 {
-  from: string;
-  user: string;
-  to: string;
-}
-
-export const LastFmApi: () => {
-  auth: (method: string, user: string) => Promise<AuthResponse>;
-  config: {
-    api_key: string;
-    app_name: string;
-    base_url: string;
-    format: {
-      json: string;
-      xml: string;
-    };
-    share_secret: string;
-    username: string;
-  };
-  getInfo: (method: string, user: string) => Promise<UserResponse>;
-  getLovedTracks: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<LovedTracksResponse>;
-  getRecentTracks: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<RecentTracksResponse>;
-  getTopAlbums: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<TopAlbumsResponse>;
-  getTopArtists: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<TopArtistsResponse>;
-  getTopTracks: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<TopTrackResponse>;
-  getWeeklyAlbumChart: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<WeeklyAlbumChartResponse>;
-  getWeeklyArtistChart: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<WeeklyArtistChartResponse>;
-  getWeeklyChartList: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<WeeklyChartListResponse>;
-  getWeeklyTrackChart: (
-    method: string,
-    user: string,
-    period: string,
-    limit: number,
-  ) => Promise<WeeklyTrackChartResponse>;
-};
-export interface config {
-  api_key: string;
-  app_name: string;
-  base_url: string;
-  format: {
-    json: string;
-    xml: string;
-  };
-  share_secret: string;
-  username: string;
-}
-
-export interface method {
-  auth: string;
-  user: {
-    getInfo: string;
-    loved_tracks: string;
-    recent_tracks: string;
-    top_albums: string;
-    top_artists: string;
-    top_tracks: string;
-    weekly_album_chart: string;
-    weekly_artist_chart: string;
-    weekly_chart_list: string;
-    weekly_track_chart: string;
-  };
 }
 
 export enum ErrorResponse {
