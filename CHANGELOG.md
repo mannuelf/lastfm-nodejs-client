@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.3
+
+- fix missmatched types for Album and Track, added some optionals pity, but it works, that just how they give us the data.
+
 ## 1.4.2
 
 - bug, release dist
