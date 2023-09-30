@@ -1,8 +1,8 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
-interface Config {  
-  api_key: string; 
+interface Config {
+  api_key: string;
   app_name: string;
   base_url: string;
   format: {
@@ -11,7 +11,7 @@ interface Config {
   };
   share_secret: string;
   username: string;
-};
+}
 /**
  * @description Stores the Last.fm API key, app name, base url, format, shared secret, and username.
  * Simply add a .env file to the root of the project and add the following:

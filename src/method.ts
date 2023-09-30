@@ -1,3 +1,9 @@
+interface ChartMethod {
+  getTopArtists: string;
+  getTopTags: string;
+  getTopTracks: string;
+}
+
 interface UserMethod {
   getInfo: string;
   getLovedTracks: string;
@@ -9,15 +15,21 @@ interface UserMethod {
   getWeeklyArtistChart: string;
   getWeeklyChartList: string;
   getWeeklyTrackChart: string;
-};
+}
 
 export interface Method {
   auth: string;
+  chart: ChartMethod;
   user: UserMethod;
-};
+}
 
 export const method = {
   auth: 'auth.getToken',
+  chart: {
+    getTopTracks: 'chart.getTopTracks',
+    getTopTags: 'chart.getTopTags',
+    getTopArtists: 'chart.getTopArtists',
+  },
   user: {
     getInfo: 'user.getInfo',
     getLovedTracks: 'user.getLovedTracks',

@@ -36,6 +36,22 @@ export interface RecentTracks {
   '@attr': AttrLimit;
 }
 
+export interface TagsResponse {
+  tag: Tag[];
+  '@attr': Attr;
+}
+
+export interface Tag {
+  name: string;
+  url: string;
+  reach: string;
+  taggings: string;
+  streamable: string;
+  wiki: Wiki;
+}
+
+export interface Wiki {}
+
 export interface LoveTracksResponse {
   lovedtracks: LovedTracks;
 }
@@ -53,6 +69,10 @@ export interface Friends {
   user: User[];
 }
 
+export interface ChartTopArtistRepsonse {
+  artists: Artist[];
+  '@attr': AttributesPage;
+}
 export interface TopArtistsResponse {
   topartists: TopArtists;
 }
@@ -91,7 +111,7 @@ export interface WeeklyAlbum {
   '@attr': { rank: string };
   playcount: string;
   image?: string;
-};
+}
 
 export interface WeeklyalbumChartAttr {
   from: string;
@@ -117,7 +137,7 @@ export type Artist = {
   '#text': string;
 };
 
-export interface Attribs {
+export interface AttributesPage {
   page: number;
   perPage: number;
   user: string;
@@ -136,8 +156,8 @@ export interface Album extends Track {
   album: Album;
   artist: Artist;
   name: string;
-  url: string
-};
+  url: string;
+}
 
 export interface AttrNowPlaying {
   nowplaying: string;
@@ -151,7 +171,7 @@ export interface Date {
 export interface Track {
   '@attr'?: AttrRank;
   album: Album;
-  artist: Artist;  
+  artist: Artist;
   date?: Date;
   duration?: string;
   image?: Image[];
@@ -163,7 +183,7 @@ export interface Track {
 }
 
 export interface AttrLimit {
-  user: string;
+  user?: string;
   totalPages: string;
   page: string;
   perPage: string;
@@ -272,18 +292,18 @@ export interface WeeklyTrackChartArtist {
 }
 
 export enum ErrorResponse {
-    InvalidService = 2,
-    InvalidMethod = 3,
-    AuthenticationFailed = 4,
-    InvalidFormat = 5,
-    InvalidParameters = 6,
-    InvalidResource = 7,
-    OperationFailed = 8,
-    InvalidSessionKey = 9,
-    InvalidAPIKey = 10,
-    ServiceOffline = 11,
-    InvalidMethodSignature = 13,
-    TemporaryError = 16,
-    SuspendedAPIKey = 26,
-    RateLimitExceeded = 29
+  InvalidService = 2,
+  InvalidMethod = 3,
+  AuthenticationFailed = 4,
+  InvalidFormat = 5,
+  InvalidParameters = 6,
+  InvalidResource = 7,
+  OperationFailed = 8,
+  InvalidSessionKey = 9,
+  InvalidAPIKey = 10,
+  ServiceOffline = 11,
+  InvalidMethodSignature = 13,
+  TemporaryError = 16,
+  SuspendedAPIKey = 26,
+  RateLimitExceeded = 29,
 }

@@ -49,15 +49,15 @@ const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
     return (yield (0, cross_fetch_1.default)(url, {
         headers: {
             'Content-Type': 'application/json',
-        },
+        }
     })
-        .then((res) => {
+        .then((res) => __awaiter(void 0, void 0, void 0, function* () {
         if (!res.ok) {
             throw new Error(res.statusText);
         }
         switch (res.status) {
             case 200: {
-                return res.json();
+                return yield res.json();
             }
             case 400: {
                 throw new Error('Bad request');
@@ -123,7 +123,7 @@ const request = (options) => __awaiter(void 0, void 0, void 0, function* () {
                 throw new Error('Unknown error');
             }
         }
-    })
+    }))
         .then((json) => json)
         .catch((error) => {
         console.log('🚨 error:', error);

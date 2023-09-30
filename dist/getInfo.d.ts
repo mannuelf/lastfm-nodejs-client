@@ -1,4 +1,4 @@
-import { UserResponse } from '../@types';
+import { type UserResponse } from "../@types";
 /**
  * GET: User profile information - LastFM
  *

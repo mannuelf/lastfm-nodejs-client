@@ -13,8 +13,16 @@ const getWeeklyArtistChart_1 = require("./getWeeklyArtistChart");
 const getWeeklyChartList_1 = require("./getWeeklyChartList");
 const getWeeklyTrackChart_1 = require("./getWeeklyTrackChart");
 const method_1 = require("./method");
+const topTags_1 = require("./chart/topTags");
+const topTracks_1 = require("./chart/topTracks");
+const topArtists_1 = require("./chart/topArtists");
 const LastFmApi = () => ({
     auth: auth_1.auth,
+    chart: {
+        chartTopArtists: topArtists_1.chartTopArtists,
+        chartTopTracks: topTracks_1.chartTopTracks,
+        chartTopTags: topTags_1.chartTopTags,
+    },
     config: config_1.config,
     getInfo: getInfo_1.getInfo,
     getLovedTracks: getLovedTracks_1.getLovedTracks,

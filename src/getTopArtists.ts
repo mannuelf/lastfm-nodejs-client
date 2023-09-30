@@ -1,4 +1,4 @@
-import { TopArtistsResponse } from '../@types';
+import { type TopArtistsResponse } from '../@types';
 import { createOptions } from './createOptions';
 import request from './request';
 
@@ -8,12 +8,12 @@ import request from './request';
  * https://www.last.fm/api/show/user.getTopArtists
  * @returns Top Artists
  */
-export function getTopArtists(
+export async function getTopArtists (
   method: string,
   user: string,
   period: string,
-  limit: string,
+  limit: string
 ): Promise<TopArtistsResponse> {
   const options = createOptions(method, user, period, limit);
-  return request<TopArtistsResponse>(options);
+  return await request<TopArtistsResponse>(options);
 }

@@ -1,4 +1,4 @@
-import { LovedTracksResponse } from '../@types';
+import { type LovedTracksResponse } from '../@types';
 /**
  * GET: Love Tracks - LastFM
  *

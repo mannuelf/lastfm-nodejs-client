@@ -1,7 +1,6 @@
-import { WeeklyTrackChartResponse } from '../@types';
+import { type WeeklyTrackChartResponse } from '../@types';
 import { createOptions } from './createOptions';
 import request from './request';
-
 
 /**
  * GET: Weekly track chart - LastFM
@@ -9,12 +8,12 @@ import request from './request';
  * https://www.last.fm/api/show/user.getWeeklyTrackChart
  * @returns Weekly track chart
  */
-export function getWeeklyTrackChart(
+export async function getWeeklyTrackChart (
   method: string,
   user: string,
   period: string,
-  limit: string,
+  limit: string
 ): Promise<WeeklyTrackChartResponse> {
   const options = createOptions(method, user, period, limit);
-  return request<WeeklyTrackChartResponse>(options);
+  return await request<WeeklyTrackChartResponse>(options);
 }

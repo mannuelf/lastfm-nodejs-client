@@ -2,10 +2,10 @@ import fetch from 'cross-fetch';
 import { config } from './config';
 
 interface RequestOptions {
-  method: string;
-  user?: string;
-  period?: string;
-  limit?: string;
+  method: string
+  user?: string
+  period?: string
+  limit?: string
 }
 
 enum ErrorResponse {
@@ -38,7 +38,7 @@ const buildUrl = (options: RequestOptions): string => {
   params.append('format', config.format.json);
 
   return `${config.base_url}?${params.toString()}`;
-}
+};
 
 const request = async <Response>(options: RequestOptions): Promise<Response> => {
   const url = buildUrl(options);
@@ -46,16 +46,16 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
   return (await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
-    },
+    }
   })
-    .then((res) => {
-      if(!res.ok) {
+    .then(async (res) => {
+      if (!res.ok) {
         throw new Error(res.statusText);
       }
 
       switch (res.status) {
         case 200: {
-          return res.json();
+          return await res.json();
         }
         case 400: {
           throw new Error('Bad request');
@@ -122,12 +122,11 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
           throw new Error('Unknown error');
         }
       }
-
     })
     .then((json) => json)
     .catch((error) => {
       console.log('🚨 error:', error);
     })) as Response;
-};
+}
 
 export default request;

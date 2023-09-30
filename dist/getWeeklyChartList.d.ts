@@ -1,4 +1,4 @@
-import { WeeklyChartListResponse } from '../@types';
+import { type WeeklyChartListResponse } from '../@types';
 /**
  * GET: Weekly chart list - LastFM
  *

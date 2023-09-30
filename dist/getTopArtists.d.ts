@@ -1,4 +1,4 @@
-import { TopArtistsResponse } from '../@types';
+import { type TopArtistsResponse } from '../@types';
 /**
  * GET: Top Artist - LastFM
  *

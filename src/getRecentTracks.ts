@@ -1,4 +1,4 @@
-import { RecentTracksResponse } from '../@types';
+import { type RecentTracksResponse } from '../@types';
 import { createOptions } from './createOptions';
 import request from './request';
 
@@ -8,12 +8,12 @@ import request from './request';
  * https://www.last.fm/api/show/user.getRecentTracks
  * @returns Recent Tracks
  */
-export function getRecentTracks(
+export async function getRecentTracks (
   method: string,
   user: string,
   period: string,
-  limit: string,
+  limit: string
 ): Promise<RecentTracksResponse> {
   const options = createOptions(method, user, period, limit);
-  return request<RecentTracksResponse>(options);
+  return await request<RecentTracksResponse>(options);
 }
