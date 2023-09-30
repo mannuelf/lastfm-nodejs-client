@@ -1,4 +1,4 @@
-import { LovedTracksResponse } from '../@types';
+import { type LovedTracksResponse } from '../@types';
 import { createOptions } from './createOptions';
 import request from './request';
 
@@ -8,12 +8,12 @@ import request from './request';
  * https://www.last.fm/api/show/user.getLovedTracks
  * @returns Loved Tracks;
  */
-export function getLovedTracks(
+export async function getLovedTracks (
   method: string,
   user: string,
   period: string,
-  limit: string,
+  limit: string
 ): Promise<LovedTracksResponse> {
   const options = createOptions(method, user, period, limit);
-  return request<LovedTracksResponse>(options);
+  return await request<LovedTracksResponse>(options);
 }

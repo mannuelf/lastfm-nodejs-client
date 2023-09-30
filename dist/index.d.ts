@@ -9,8 +9,16 @@ import { getWeeklyAlbumChart } from './getWeeklyAlbumChart';
 import { getWeeklyArtistChart } from './getWeeklyArtistChart';
 import { getWeeklyChartList } from './getWeeklyChartList';
 import { getWeeklyTrackChart } from './getWeeklyTrackChart';
+import { chartTopTags } from './chart/topTags';
+import { chartTopTracks } from './chart/topTracks';
+import { chartTopArtists } from './chart/topArtists';
 declare const LastFmApi: () => {
     auth: typeof auth;
+    chart: {
+        chartTopArtists: typeof chartTopArtists;
+        chartTopTracks: typeof chartTopTracks;
+        chartTopTags: typeof chartTopTags;
+    };
     config: {
         api_key: string;
         app_name: string;
@@ -34,6 +42,11 @@ declare const LastFmApi: () => {
     getWeeklyTrackChart: typeof getWeeklyTrackChart;
     method: {
         auth: string;
+        chart: {
+            getTopTracks: string;
+            getTopTags: string;
+            getTopArtists: string;
+        };
         user: {
             getInfo: string;
             getLovedTracks: string;

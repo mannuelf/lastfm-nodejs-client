@@ -11,9 +11,17 @@ import { getWeeklyArtistChart } from './getWeeklyArtistChart';
 import { getWeeklyChartList } from './getWeeklyChartList';
 import { getWeeklyTrackChart } from './getWeeklyTrackChart';
 import { method } from './method';
+import { chartTopTags } from './chart/topTags';
+import { chartTopTracks } from './chart/topTracks';
+import { chartTopArtists } from './chart/topArtists';
 
 const LastFmApi = () => ({
   auth,
+  chart: {
+    chartTopArtists,
+    chartTopTracks,
+    chartTopTags,
+  },
   config,
   getInfo,
   getLovedTracks,
@@ -26,6 +34,6 @@ const LastFmApi = () => ({
   getWeeklyChartList,
   getWeeklyTrackChart,
   method,
-})
+});
 
 export default LastFmApi;

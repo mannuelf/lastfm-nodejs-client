@@ -1,3 +1,8 @@
+interface ChartMethod {
+    getTopArtists: string;
+    getTopTags: string;
+    getTopTracks: string;
+}
 interface UserMethod {
     getInfo: string;
     getLovedTracks: string;
@@ -12,10 +17,16 @@ interface UserMethod {
 }
 export interface Method {
     auth: string;
+    chart: ChartMethod;
     user: UserMethod;
 }
 export declare const method: {
     auth: string;
+    chart: {
+        getTopTracks: string;
+        getTopTags: string;
+        getTopArtists: string;
+    };
     user: {
         getInfo: string;
         getLovedTracks: string;

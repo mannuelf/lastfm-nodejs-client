@@ -1,4 +1,4 @@
-import { TopAlbumsResponse } from '../@types';
+import { type TopAlbumsResponse } from '../@types';
 /**
  * GET: Top Albums - LastFM
  *
