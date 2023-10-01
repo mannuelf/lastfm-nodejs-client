@@ -1,13 +1,15 @@
-import { test, expect } from '@playwright/test';
+import { expect, test } from '@playwright/test';
 import dotenv from 'dotenv';
 import path from 'path';
 
 dotenv.config();
-dotenv.config({ path: path.resolve(__dirname, '..', process.env.CI ? '.env.example' : '.env') });
+dotenv.config({
+  path: path.resolve(__dirname, '..', process.env.CI ? '.env.example' : '.env'),
+});
 
 const { LASTFM_API_BASE_URL, LASTFM_API_KEY } = process.env;
 
-let environmentVarWarning =
+const environmentVarWarning =
   '❗ No environment variable found, use the .env.example file to create your own .env file with required properties and values.';
 
 test.describe('Environment variables present and configured', async () => {
