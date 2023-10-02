@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.5
+
+- fixes missing lastFm types
+
 ## 1.4.4
 
 - distribute ESM and CommonJs
