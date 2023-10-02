@@ -2,10 +2,10 @@ import fetch from 'cross-fetch';
 import { config } from './config';
 
 interface RequestOptions {
-  method: string
-  user?: string
-  period?: string
-  limit?: string
+  method: string;
+  user?: string;
+  period?: string;
+  limit?: string;
 }
 
 enum ErrorResponse {
@@ -22,7 +22,7 @@ enum ErrorResponse {
   InvalidMethodSignature = 13,
   TemporaryError = 16,
   SuspendedAPIKey = 26,
-  RateLimitExceeded = 29
+  RateLimitExceeded = 29,
 }
 
 const buildUrl = (options: RequestOptions): string => {
@@ -46,7 +46,7 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
   return (await fetch(url, {
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
   })
     .then(async (res) => {
       if (!res.ok) {
@@ -125,8 +125,9 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
     })
     .then((json) => json)
     .catch((error) => {
-      console.log('🚨 error:', error);
+      // eslint-disable-next-line no-console
+      console.error('🚨 error:', error);
     })) as Response;
-}
+};
 
 export default request;
