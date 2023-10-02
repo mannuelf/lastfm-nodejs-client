@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.4.4
+
+- distribute ESM and CommonJs
+- new build scripts and commands
+
 ## 1.4.3
 
 - fix missmatched types for Album and Track, added some optionals pity, but it works, that just how they give us the data.
