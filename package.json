@@ -22,7 +22,7 @@
     }
   },
   "scripts": {
-    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && bash ./generate-package-json-files.sh",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && bash ./generate-package-json-files.sh && mkdir dist/@types && cp -a @types/* dist/@types",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "prepare": "npm run build",
