@@ -1,0 +1,7 @@
+{
+  "name": "lastfm-nodejs-client",
+  "description": "A client for interacting with the lastFm API",
+  "main": "../dist/cjs/index.js",
+  "module": "../dist/mjs/indext.js",
+  "types": "../dist/mjs/index.d.ts"
+}
