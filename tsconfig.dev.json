@@ -1,7 +1,0 @@
-{
-  "extends": "./tsconfig.json",
-  "compilerOptions": {
-    "declaration": false
-  },
-  "exclude": ["tests/**/*.spec.ts", "tests/**/*.test.ts", "./playwright.config.ts"]
-}
