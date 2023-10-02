@@ -98,13 +98,25 @@ Create them [here](https://www.last.fm/api/account/create).
 ### Develop
 
 ```bash
-pnpm dev
+pnpm test
+```
+
+```bash
+pnpm lint
+pnpm lint-fix
 ```
 
 ### Build
 
 ```bash
 pnpm build
+```
+
+### Publish
+
+```bash
+pnpm prepare
+pnpm publish
 ```
 
 ### Why I built this?
