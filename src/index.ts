@@ -15,25 +15,25 @@ import { chartTopTags } from './chart/topTags';
 import { chartTopTracks } from './chart/topTracks';
 import { chartTopArtists } from './chart/topArtists';
 
-const LastFmApi = () => ({
-  auth,
-  chart: {
-    chartTopArtists,
-    chartTopTracks,
-    chartTopTags,
-  },
-  config,
-  getInfo,
-  getLovedTracks,
-  getRecentTracks,
-  getTopAlbums,
-  getTopArtists,
-  getTopTracks,
-  getWeeklyAlbumChart,
-  getWeeklyArtistChart,
-  getWeeklyChartList,
-  getWeeklyTrackChart,
-  method,
-});
-
-export default LastFmApi;
+export default function LastFmApi() {
+  return {
+    auth,
+    chart: {
+      chartTopArtists,
+      chartTopTracks,
+      chartTopTags,
+    },
+    config,
+    getInfo,
+    getLovedTracks,
+    getRecentTracks,
+    getTopAlbums,
+    getTopArtists,
+    getTopTracks,
+    getWeeklyAlbumChart,
+    getWeeklyArtistChart,
+    getWeeklyChartList,
+    getWeeklyTrackChart,
+    method,
+  };
+}
