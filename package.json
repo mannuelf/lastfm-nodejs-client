@@ -2,13 +2,32 @@
   "name": "lastfm-nodejs-client",
   "version": "1.4.4",
   "description": "A NodeJS wrapper client for LastFm API. Fetching public data by username using the LastFm public API",
-  "main": "./dist",
+  "main": "dist/cjs/index.js",
+  "module": "dist/mjs/index.js",
+  "types": "dist/mjs/index.d.ts",
+  "files": [
+    "dist",
+    "lastfm-nodejs-client"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/mjs/index.d.ts"
+    },
+    "./lastfm-nodejs-client": {
+      "import": "./dist/mjs/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/mjs/index.d.ts"
+    }
+  },
   "scripts": {
-    "build": "rimraf dist && tsc",
+    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && bash ./generate-package-json-files.sh",
+    "lint": "eslint src",
+    "lint-fix": "eslint src --fix",
+    "prepare": "npm run build",
+    "_prepublishOnly": "npm test && npm run lint",
     "clean": "rimraf dist",
-    "lint": "npx eslint src/**",
-    "lint:fix": "npx eslint --fix src/**",
-    "dev": "npm run clean && tsc --watch --project tsconfig.dev.json",
     "publish": "npm run build && npm publish --access public",
     "test": "npx playwright test --reporter=list"
   },
