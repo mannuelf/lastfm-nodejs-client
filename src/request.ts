@@ -1,5 +1,6 @@
-import fetch from 'cross-fetch';
-import { config } from './config';
+import fetch from "cross-fetch";
+import { config } from "./config";
+import { type } from "os";
 
 interface RequestOptions {
   method: string;
@@ -28,24 +29,26 @@ enum ErrorResponse {
 const buildUrl = (options: RequestOptions): string => {
   const params = new URLSearchParams();
 
-  params.append('method', options.method);
+  params.append("method", options.method);
 
-  if (options.user) params.append('user', options.user);
-  if (options.period) params.append('period', options.period);
-  if (options.limit) params.append('limit', options.limit);
+  if (options.user) params.append("user", options.user);
+  if (options.period) params.append("period", options.period);
+  if (options.limit) params.append("limit", options.limit);
 
-  params.append('api_key', config.api_key);
-  params.append('format', config.format.json);
+  params.append("api_key", config.api_key);
+  params.append("format", config.format.json);
 
   return `${config.base_url}?${params.toString()}`;
 };
 
-const request = async <Response>(options: RequestOptions): Promise<Response> => {
+const request = async <Response>(
+  options: RequestOptions,
+): Promise<Response> => {
   const url = buildUrl(options);
 
   return (await fetch(url, {
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
     },
   })
     .then(async (res) => {
@@ -55,78 +58,89 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
 
       switch (res.status) {
         case 200: {
-          return await res.json();
+          if (res.headers.get("content-type").includes("json")) {
+            console.log("its json", await res.json());
+            return await res.json();
+          } else {
+            console.log(
+              "its NOT json",
+              await res.arrayBuffer(),
+              await typeof res.arrayBuffer(),
+            );
+            return undefined;
+          }
+          break;
         }
         case 400: {
-          throw new Error('Bad request');
+          throw new Error("Bad request");
         }
         case 401: {
-          throw new Error('Unauthorized');
+          throw new Error("Unauthorized");
         }
         case 403: {
-          throw new Error('Forbidden');
+          throw new Error("Forbidden");
         }
         case 404: {
-          throw new Error('Not found');
+          throw new Error("Not found");
         }
         case 500: {
-          throw new Error('Internal server error');
+          throw new Error("Internal server error");
         }
         case 503: {
-          throw new Error('Service unavailable');
+          throw new Error("Service unavailable");
         }
         case ErrorResponse.InvalidAPIKey: {
-          throw new Error('Invalid API key');
+          throw new Error("Invalid API key");
         }
         case ErrorResponse.InvalidMethod: {
-          throw new Error('Invalid method');
+          throw new Error("Invalid method");
         }
         case ErrorResponse.InvalidParameters: {
-          throw new Error('Invalid parameters');
+          throw new Error("Invalid parameters");
         }
         case ErrorResponse.InvalidResource: {
-          throw new Error('Invalid resource');
+          throw new Error("Invalid resource");
         }
         case ErrorResponse.InvalidSessionKey: {
-          throw new Error('Invalid session key');
+          throw new Error("Invalid session key");
         }
         case ErrorResponse.InvalidService: {
-          throw new Error('Invalid service');
+          throw new Error("Invalid service");
         }
         case ErrorResponse.OperationFailed: {
-          throw new Error('Operation failed');
+          throw new Error("Operation failed");
         }
         case ErrorResponse.RateLimitExceeded: {
-          throw new Error('Rate limit exceeded');
+          throw new Error("Rate limit exceeded");
         }
         case ErrorResponse.ServiceOffline: {
-          throw new Error('Service offline');
+          throw new Error("Service offline");
         }
         case ErrorResponse.SuspendedAPIKey: {
-          throw new Error('Suspended API key');
+          throw new Error("Suspended API key");
         }
         case ErrorResponse.TemporaryError: {
-          throw new Error('Temporary error');
+          throw new Error("Temporary error");
         }
         case ErrorResponse.AuthenticationFailed: {
-          throw new Error('Authentication failed');
+          throw new Error("Authentication failed");
         }
         case ErrorResponse.InvalidFormat: {
-          throw new Error('Invalid format');
+          throw new Error("Invalid format");
         }
         case ErrorResponse.InvalidMethodSignature: {
-          throw new Error('Invalid method signature');
+          throw new Error("Invalid method signature");
         }
 
         default: {
-          throw new Error('Unknown error');
+          throw new Error("Unknown error");
         }
       }
     })
     .then((json) => json)
     .catch((error) => {
       // eslint-disable-next-line no-console
-      console.error('🚨 error:', error);
+      console.error("🚨 error:", error);
     })) as Response;
 };
 
