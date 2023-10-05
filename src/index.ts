@@ -15,6 +15,7 @@ import { chartTopTags } from './chart/topTags';
 import { chartTopTracks } from './chart/topTracks';
 import { chartTopArtists } from './chart/topArtists';
 
+console.log('LastFmApi init>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>')
 export default function LastFmApi() {
   return {
     auth,
