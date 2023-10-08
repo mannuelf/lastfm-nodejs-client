@@ -1,5 +1,9 @@
 # Changelog
 
+## 1.4.6
+
+- error handling check if json in request.
+
 ## 1.4.5
 
 - fixes missing lastFm types
