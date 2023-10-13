@@ -1,4 +1,4 @@
-import type { TagsResponse } from '../../@types';
+import type { TagsResponse } from '../lastfm.types';
 import { createOptions } from '../createOptions';
 import request from '../request';
 

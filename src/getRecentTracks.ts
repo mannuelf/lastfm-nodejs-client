@@ -1,4 +1,4 @@
-import { type RecentTracksResponse } from '../@types';
+import { type RecentTracksResponse } from './lastfm.types';
 import { createOptions } from './createOptions';
 import request from './request';
 

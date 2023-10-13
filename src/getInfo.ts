@@ -1,4 +1,4 @@
-import { type UserResponse } from "../@types";
+import { type UserResponse } from "./lastfm.types";
 import { createOptions } from "./createOptions";
 import request from "./request";
 

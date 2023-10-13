@@ -1,4 +1,4 @@
-import type { ChartTopArtistResponse } from '../../@types';
+import type { ChartTopArtistResponse } from '../lastfm.types';
 import { createOptions } from '../createOptions';
 import request from '../request';
 

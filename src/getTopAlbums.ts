@@ -1,4 +1,4 @@
-import { type TopAlbumsResponse } from "../@types";
+import { type TopAlbumsResponse } from "./lastfm.types";
 import request from "./request";
 import { createOptions } from "./createOptions";
 
