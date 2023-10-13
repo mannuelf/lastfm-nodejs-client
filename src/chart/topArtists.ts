@@ -1,4 +1,4 @@
-import { ChartTopArtistRepsonse } from '../../@types';
+import type { ChartTopArtistResponse } from '../../@types';
 import { createOptions } from '../createOptions';
 import request from '../request';
 
@@ -8,7 +8,7 @@ export async function chartTopArtists(
   period: string,
   page: string,
   limit: string,
-): Promise<ChartTopArtistRepsonse> {
+): Promise<ChartTopArtistResponse> {
   const options = createOptions(method, user, period, page, limit);
-  return await request<ChartTopArtistRepsonse>(options);
+  return await request<ChartTopArtistResponse>(options);
 }

@@ -1,4 +1,4 @@
-import { TagsResponse } from '../../@types';
+import type { TagsResponse } from '../../@types';
 import { createOptions } from '../createOptions';
 import request from '../request';
 

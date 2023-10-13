@@ -1,4 +1,4 @@
-import { TopTrackResponse } from '../../@types';
+import type { TopTrackResponse } from '../../@types';
 import { createOptions } from '../createOptions';
 import request from '../request';
 
