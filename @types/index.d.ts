@@ -69,7 +69,7 @@ export interface Friends {
   user: User[];
 }
 
-export interface ChartTopArtistRepsonse {
+export interface ChartTopArtistResponse {
   artists: Artist[];
   '@attr': AttributesPage;
 }
@@ -244,7 +244,7 @@ export interface AttrRank {
 
 export interface AttrLimit {
   from: string;
-  user: string;
+  user?: string;
   to: string;
 }
 

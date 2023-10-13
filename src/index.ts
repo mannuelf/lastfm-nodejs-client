@@ -15,7 +15,7 @@ import { chartTopTags } from './chart/topTags';
 import { chartTopTracks } from './chart/topTracks';
 import { chartTopArtists } from './chart/topArtists';
 
-export default function LastFmApi() {
+const LastFmApi = () => {
   return {
     auth,
     chart: {
@@ -37,3 +37,5 @@ export default function LastFmApi() {
     method,
   };
 }
+
+export default LastFmApi;

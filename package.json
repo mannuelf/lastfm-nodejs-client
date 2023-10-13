@@ -2,27 +2,14 @@
   "name": "lastfm-nodejs-client",
   "version": "1.4.6",
   "description": "A NodeJS wrapper client for LastFm API. Fetching public data by username using the LastFm public API",
-  "main": "dist/cjs/index.js",
-  "module": "dist/mjs/index.js",
-  "types": "dist/mjs/index.d.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/@types/index.d.ts",
   "files": [
-    "dist",
-    "lastfm-nodejs-client"
+    "dist"
   ],
-  "exports": {
-    ".": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/mjs/index.d.ts"
-    },
-    "./lastfm-nodejs-client": {
-      "import": "./dist/mjs/index.js",
-      "require": "./dist/cjs/index.js",
-      "types": "./dist/mjs/index.d.ts"
-    }
-  },
   "scripts": {
-    "build": "rm -fr dist/* && tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && bash ./generate-package-json-files.sh && mkdir dist/@types && cp -a @types/* dist/@types",
+    "build": "rimraf dist && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json && mkdir dist/@types && cp -a @types/* dist/@types/",
     "lint": "eslint src",
     "lint-fix": "eslint src --fix",
     "prepare": "npm run build",
@@ -66,5 +53,6 @@
   "bugs": {
     "url": "https://github.com/mannuelf/lastfm-nodejs-client/issues"
   },
-  "homepage": "https://github.com/mannuelf/lastfm-nodejs-client#readme"
+  "homepage": "https://github.com/mannuelf/lastfm-nodejs-client#readme",
+  "type": "module"
 }

@@ -55,11 +55,12 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
 
       switch (res.status) {
         case 200: {
-          if (res.headers.get('content-type').includes('json')) {
+          const contentType = res.headers.get('content-type');
+          if (contentType && contentType.includes('json')) {
             const body = await res.json();
             return body;
           }
-          break;
+          return res;
         }
         case 400: {
           throw new Error('Bad request');
@@ -127,8 +128,8 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
         }
       }
     })
-    .then((json) => json)
-    .catch((error) => {
+    .then((json: any) => json)
+    .catch((error: any) => {
       // eslint-disable-next-line no-console
       console.error('🚨 error:', error);
     })) as Response;
