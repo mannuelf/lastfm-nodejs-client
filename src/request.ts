@@ -128,8 +128,8 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
         }
       }
     })
-    .then((json: any) => json)
-    .catch((error: any) => {
+    .then((json) => json)
+    .catch((error) => {
       // eslint-disable-next-line no-console
       console.error('🚨 error:', error);
     })) as Response;
