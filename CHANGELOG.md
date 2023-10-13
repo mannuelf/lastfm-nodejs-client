@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.5.0
+
+- move types to root
+- fix esm and commonjs distributions
+- update docs
+
 ## 1.4.6
 
 - error handling check if json in request.

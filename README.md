@@ -30,7 +30,7 @@ import { lastFm } from 'lastfm-nodejs-client';
 Import the Types as type:
 
 ```js
-import type { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client/@types';
+import type { Artist, Track, User, WeeklyAlbum } from 'lastfm-nodejs-client/dist/@types/lastfm.types';
 ```
 
 _Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)_
