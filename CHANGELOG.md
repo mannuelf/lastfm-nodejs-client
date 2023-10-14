@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.5.1
+
+- fix node module resolution issues where on build node could not find the module.
+- now both esm and commonjs are built to dist folder and working.
+
 ## 1.5.0
 
 - move types to root
