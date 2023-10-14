@@ -1,6 +1,6 @@
-import { type TopTrackResponse } from './lastfm.types';
-import { createOptions } from './createOptions';
-import request from './request';
+import { type TopTrackResponse } from './lastfm.types.js';
+import { createOptions } from './createOptions.js';
+import request from './request.js';
 
 /**
  * GET: Top Tracks - LastFM

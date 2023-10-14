@@ -1,6 +1,6 @@
-import { type WeeklyAlbumChartResponse } from './lastfm.types';
-import { createOptions } from './createOptions';
-import request from './request';
+import { type WeeklyAlbumChartResponse } from './lastfm.types.js';
+import { createOptions } from './createOptions.js';
+import request from './request.js';
 
 /**
  * GET: Weekly album chart - LastFM

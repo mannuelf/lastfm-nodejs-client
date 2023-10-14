@@ -1,6 +1,6 @@
-import type { ChartTopArtistResponse } from '../lastfm.types';
-import { createOptions } from '../createOptions';
-import request from '../request';
+import type { ChartTopArtistResponse } from '../lastfm.types.js';
+import { createOptions } from '../createOptions.js';
+import request from '../request.js';
 
 export async function chartTopArtists(
   method: string,

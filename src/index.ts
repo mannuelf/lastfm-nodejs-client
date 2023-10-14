@@ -1,19 +1,19 @@
-import { auth } from './auth';
-import { config } from './config';
-import { getInfo } from './getInfo';
-import { getLovedTracks } from './getLovedTracks';
-import { getRecentTracks } from './getRecentTracks';
-import { getTopAlbums } from './getTopAlbums';
-import { getTopArtists } from './getTopArtists';
-import { getTopTracks } from './getTopTracks';
-import { getWeeklyAlbumChart } from './getWeeklyAlbumChart';
-import { getWeeklyArtistChart } from './getWeeklyArtistChart';
-import { getWeeklyChartList } from './getWeeklyChartList';
-import { getWeeklyTrackChart } from './getWeeklyTrackChart';
-import { method } from './method';
-import { chartTopTags } from './chart/topTags';
-import { chartTopTracks } from './chart/topTracks';
-import { chartTopArtists } from './chart/topArtists';
+import { auth } from './auth.js';
+import { config } from './config.js';
+import { getInfo } from './getInfo.js';
+import { getLovedTracks } from './getLovedTracks.js';
+import { getRecentTracks } from './getRecentTracks.js';
+import { getTopAlbums } from './getTopAlbums.js';
+import { getTopArtists } from './getTopArtists.js';
+import { getTopTracks } from './getTopTracks.js';
+import { getWeeklyAlbumChart } from './getWeeklyAlbumChart.js';
+import { getWeeklyArtistChart } from './getWeeklyArtistChart.js';
+import { getWeeklyChartList } from './getWeeklyChartList.js';
+import { getWeeklyTrackChart } from './getWeeklyTrackChart.js';
+import { method } from './method.js';
+import { chartTopTags } from './chart/topTags.js';
+import { chartTopTracks } from './chart/topTracks.js';
+import { chartTopArtists } from './chart/topArtists.js';
 
 const LastFmApi = () => {
   return {

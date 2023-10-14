@@ -1,6 +1,6 @@
-import { type AuthResponse } from './lastfm.types';
-import { createOptions } from './createOptions';
-import request from './request';
+import { type AuthResponse } from './lastfm.types.js';
+import { createOptions } from './createOptions.js';
+import request from './request.js';
 
 /**
  * POST: Auth - LastFM
