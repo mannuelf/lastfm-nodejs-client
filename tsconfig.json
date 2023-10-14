@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
+    "allowJs": false,
+    "declaration": true,
+    "declarationDir": "dist/@types",
     "esModuleInterop": true,
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "moduleResolution": "Bundler",
+    "noUncheckedIndexedAccess": true,
+    "outDir": "dist",
+    "resolveJsonModule": true,
     "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
     "target": "ESNext",
     "verbatimModuleSyntax": false,
-    "allowJs": false,
-    "resolveJsonModule": true,
-    "moduleDetection": "force",
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "moduleResolution": "Bundler",
-    "module": "ESNext",
-    "outDir": "dist",
-    "sourceMap": true,
-    "declaration": true,
-    "declarationDir": "dist/@types"
   },
   "include": ["./src"]
 }
