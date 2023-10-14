@@ -1,6 +1,6 @@
-import { type TopAlbumsResponse } from "./lastfm.types";
-import request from "./request";
-import { createOptions } from "./createOptions";
+import { type TopAlbumsResponse } from './lastfm.types';
+import request from './request';
+import { createOptions } from './createOptions';
 
 /**
  * GET: Top Albums - LastFM

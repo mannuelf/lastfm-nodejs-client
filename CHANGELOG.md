@@ -41,7 +41,7 @@
 
 - Updates npm dependencies.
 - refactors request with new error handling and responses.
-- updates getInfo, removes  hte un-required params.
+- updates getInfo, removes hte un-required params.
 
 ## 1.2.4
 

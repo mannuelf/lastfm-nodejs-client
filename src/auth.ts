@@ -1,6 +1,6 @@
-import { type AuthResponse } from "./lastfm.types";
-import { createOptions } from "./createOptions";
-import request from "./request";
+import { type AuthResponse } from './lastfm.types';
+import { createOptions } from './createOptions';
+import request from './request';
 
 /**
  * POST: Auth - LastFM
@@ -12,11 +12,11 @@ import request from "./request";
  * Can only used once (they are consumed when a session is created).
  * @returns Auth token
  */
-export async function auth (
+export async function auth(
   method: string,
   user: string,
   period: string,
-  limit: string
+  limit: string,
 ): Promise<AuthResponse> {
   const options = createOptions(method, user, period, limit);
   return await request<AuthResponse>(options);
