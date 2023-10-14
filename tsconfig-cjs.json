@@ -5,5 +5,5 @@
     "module": "CommonJS",
     "outDir": "./dist/cjs",
     "moduleResolution": "node"
-  },
+  }
 }

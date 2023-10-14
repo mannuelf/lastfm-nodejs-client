@@ -14,9 +14,7 @@
     "outDir": "dist",
     "sourceMap": true,
     "declaration": true,
-    "declarationDir": "dist/@types",
+    "declarationDir": "dist/@types"
   },
-  "include": [
-    "./src"
-  ]
+  "include": ["./src"]
 }

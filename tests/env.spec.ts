@@ -3,7 +3,13 @@ import dotenv from 'dotenv';
 import path from 'path';
 
 dotenv.config();
-dotenv.config({ path: path.resolve(new URL('.', import.meta.url).pathname, '..', process.env.CI ? '.env.example' : '.env') });
+dotenv.config({
+  path: path.resolve(
+    new URL('.', import.meta.url).pathname,
+    '..',
+    process.env.CI ? '.env.example' : '.env',
+  ),
+});
 
 const { LASTFM_API_BASE_URL, LASTFM_API_KEY } = process.env;
 

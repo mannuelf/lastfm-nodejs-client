@@ -36,6 +36,6 @@ const LastFmApi = () => {
     getWeeklyTrackChart,
     method,
   };
-}
+};
 
 export default LastFmApi;
