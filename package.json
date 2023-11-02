@@ -38,13 +38,13 @@
     "rimraf": "^5.0.5"
   },
   "devDependencies": {
-    "@playwright/test": "^1.38.1",
-    "@types/node": "^20.8.3",
-    "@typescript-eslint/eslint-plugin": "^6.7.4",
-    "eslint": "^8.51.0",
+    "@playwright/test": "^1.39.0",
+    "@types/node": "^20.8.10",
+    "@typescript-eslint/eslint-plugin": "^6.9.1",
+    "eslint": "^8.52.0",
     "eslint-config-standard-with-typescript": "^39.1.1",
-    "eslint-plugin-import": "^2.25.2",
-    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-n": "^16.2.0",
     "eslint-plugin-promise": "^6.0.0",
     "typescript": "^5.2.2"
   },
