@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.5.2
+
+- chore: Update all npm dependencies to their latest stable versions and lock `dotenv` version.
+- chore: Add `.npmrc` to enforce exact version saving for future installations.
+- test: Add new API integration tests with Playwright (`tests/api.spec.ts`) to ensure `getTopArtists` and `getTopTracks` functions correctly map data against the live API.
+- docs: Add Antigravity/Claude AI initialization file (`CLAUDE.md`) explaining the project architecture, dependencies, and setup.
+- docs: Add global AI skills reference (`find-skills`) for the project.
+
 ## 1.5.1
 
 - fix node module resolution issues where on build node could not find the module.
