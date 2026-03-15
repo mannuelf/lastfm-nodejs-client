@@ -1,10 +1,14 @@
 # Changelog
 
+## 1.5.3
+
+- feat: add getRecentTracks test
+
 ## 1.5.2
 
 - chore: Update all npm dependencies to their latest stable versions and lock `dotenv` version.
 - chore: Add `.npmrc` to enforce exact version saving for future installations.
-- test: Add new API integration tests with Playwright (`tests/api.spec.ts`) to ensure `getTopArtists` and `getTopTracks` functions correctly map data against the live API.
+- test: Add new API integration tests with Playwright (`tests/api.spec.ts`) to ensure `getTopArtists`, `getTopTracks`, and `getRecentTracks` functions correctly map data against the live API.
 - docs: Add Antigravity/Claude AI initialization file (`CLAUDE.md`) explaining the project architecture, dependencies, and setup.
 - docs: Add global AI skills reference (`find-skills`) for the project.
 
