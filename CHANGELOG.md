@@ -11,6 +11,7 @@
 
 ## 1.5.3
 
+- security updates
 - feat: add getRecentTracks test
 
 ## 1.5.2
