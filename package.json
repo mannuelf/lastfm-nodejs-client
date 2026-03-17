@@ -15,7 +15,7 @@
     "prepare": "npm run build",
     "prepublish": "npm test && npm run lint && npm run prepare",
     "clean": "rimraf dist",
-    "publish": "npm run prepublish && npm publish --access public",
+    "release": "npm run prepublish && npm publish --access public",
     "test": "pnpm exec playwright test --reporter=list"
   },
   "keywords": [
