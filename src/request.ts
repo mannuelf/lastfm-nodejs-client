@@ -5,6 +5,7 @@ interface RequestOptions {
   user?: string;
   period?: string;
   limit?: string;
+  from?: string;
 }
 
 enum ErrorResponse {
@@ -31,6 +32,7 @@ const buildUrl = (options: RequestOptions): string => {
 
   if (options.user) params.append('user', options.user);
   if (options.period) params.append('period', options.period);
+  if (options.from) params.append('from', options.from);
   if (options.limit) params.append('limit', options.limit);
 
   params.append('api_key', config.api_key);

@@ -11,9 +11,9 @@ import request from './request.js';
 export async function getRecentTracks(
   method: string,
   user: string,
-  period: string,
   limit: string,
+  from?: string,
 ): Promise<RecentTracksResponse> {
-  const options = createOptions(method, user, period, limit);
+  const options = createOptions(method, user, undefined, limit, undefined, from);
   return await request<RecentTracksResponse>(options);
 }

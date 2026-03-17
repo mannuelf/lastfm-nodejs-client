@@ -4,6 +4,7 @@ export function createOptions(
   period?: string,
   limit?: string,
   page?: string,
+  from?: string,
 ) {
   return {
     method,
@@ -11,5 +12,6 @@ export function createOptions(
     user,
     period,
     limit,
+    from,
   };
 }
