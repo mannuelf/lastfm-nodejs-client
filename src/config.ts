@@ -1,6 +1,3 @@
-import * as dotenv from 'dotenv';
-dotenv.config();
-
 interface Config {
   api_key: string;
   app_name: string;

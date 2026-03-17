@@ -1,15 +1,15 @@
 import { test, expect } from '@playwright/test';
-import dotenv from 'dotenv';
 import path from 'path';
 
-dotenv.config();
-dotenv.config({
-  path: path.resolve(
-    new URL('.', import.meta.url).pathname,
-    '..',
-    process.env.CI ? '.env.example' : '.env',
-  ),
-});
+// Load environment variables natively (Node.js 20.12+)
+const envPath = process.env.CI ? '.env.example' : '.env';
+try {
+  process.loadEnvFile(
+    path.resolve(new URL('.', import.meta.url).pathname, '..', envPath)
+  );
+} catch (error) {
+  // If it's already loaded via CLI flag or the file doesn't exist, we can ignore
+}
 
 const { LASTFM_API_BASE_URL, LASTFM_API_KEY } = process.env;
 
