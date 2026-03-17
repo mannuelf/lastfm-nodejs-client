@@ -1,4 +1,3 @@
-import fetch from 'cross-fetch';
 import { config } from './config.js';
 
 interface RequestOptions {
