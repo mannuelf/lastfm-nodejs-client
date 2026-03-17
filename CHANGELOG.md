@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.5
+
+- feat(getRecentTracks): add optional `from` parameter (Unix timestamp) to support date-range filtering
+- feat(createOptions): expose `from` as an optional parameter passed through to request
+- feat(request): append `from` query param to URL when provided
+- refactor(getRecentTracks): replace unused `period` param with `from` to align with the Last.fm `user.getRecentTracks` API spec
+
 ## 1.5.4
 
 - fix(request): replace silent error swallowing with proper error propagation
