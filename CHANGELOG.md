@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.5.4
+
+- fix(request): replace silent error swallowing with proper error propagation
+- fix(request): remove unreachable switch cases that compared HTTP status codes against LastFM API error codes (different number ranges)
+- fix(request): parse JSON body and throw on LastFM API error codes (2–29)
+- refactor(request): rewrite `.then/.catch` chain as clean `async/await`
+- test(request): add error handling tests covering HTTP errors, LastFM API errors, and network failures
+- test(api): add integration tests for all previously untested methods — `getTopAlbums`, `getLovedTracks`, `getInfo`, `getWeeklyChartList`, `getWeeklyArtistChart`, `getWeeklyAlbumChart`, `getWeeklyTrackChart`, `chart.chartTopArtists`, `chart.chartTopTracks`, `chart.chartTopTags`
+
 ## 1.5.3
 
 - feat: add getRecentTracks test
