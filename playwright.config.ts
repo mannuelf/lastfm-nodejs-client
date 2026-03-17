@@ -1,4 +1,11 @@
 import { devices, PlaywrightTestConfig } from '@playwright/test';
+import path from 'path';
+
+try {
+  process.loadEnvFile(path.resolve(import.meta.dirname, '.env'));
+} catch {
+  // CI uses env vars injected directly
+}
 
 /**
  * See https://playwright.dev/docs/test-configuration.

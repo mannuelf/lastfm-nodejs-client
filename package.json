@@ -16,7 +16,7 @@
     "prepublish": "npm test && npm run lint && npm run prepare",
     "clean": "rimraf dist",
     "publish": "npm run prepublish && npm publish --access public",
-    "test": "node --env-file=.env node_modules/.bin/playwright test --reporter=list"
+    "test": "pnpm exec playwright test --reporter=list"
   },
   "keywords": [
     "client",
