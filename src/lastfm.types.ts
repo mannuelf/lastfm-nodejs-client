@@ -2,6 +2,43 @@ export interface AuthResponse {
   token: string;
 }
 
+export interface UserTopTagsResponse {
+  toptags: {
+    tag: UserTopTag[];
+    '@attr': { user: string };
+  };
+}
+
+export interface UserTopTag {
+  name: string;
+  count: string;
+  url: string;
+}
+
+export interface TagTopTracksResponse {
+  tracks: {
+    track: TagTrack[];
+    '@attr': {
+      tag: string;
+      page: string;
+      perPage: string;
+      totalPages: string;
+      total: string;
+    };
+  };
+}
+
+export interface TagTrack {
+  name: string;
+  duration: string;
+  mbid: string;
+  url: string;
+  streamable: { '#text': string; fulltrack: string };
+  artist: { name: string; mbid: string; url: string };
+  image: Image[];
+  '@attr': { rank: string };
+}
+
 export interface LovedTracksResponse {
   lovedtracks: LovedTracks;
 }
@@ -317,4 +354,157 @@ export enum ErrorResponse {
   TemporaryError = 16,
   SuspendedAPIKey = 26,
   RateLimitExceeded = 29,
+}
+
+// Album
+export interface AlbumInfoResponse {
+  album: {
+    name: string; artist: string; mbid?: string; url: string;
+    image: Image[]; listeners: string; playcount: string;
+    tracks?: { track: Track[] };
+    tags?: { tag: { name: string; url: string }[] };
+    wiki?: { published: string; summary: string; content: string };
+  };
+}
+export interface AlbumTagsResponse {
+  tags: { tag: { name: string; url: string }[]; '@attr': { artist: string; album: string } };
+}
+export interface AlbumTopTagsResponse {
+  toptags: { tag: { name: string; count: number; url: string }[]; '@attr': { artist: string; album: string } };
+}
+export interface AlbumSearchResponse {
+  results: {
+    albummatches: { album: { name: string; artist: string; mbid?: string; url: string; image: Image[] }[] };
+    '@attr': { for: string };
+    'opensearch:totalResults': string;
+    'opensearch:startIndex': string;
+    'opensearch:itemsPerPage': string;
+  };
+}
+
+// Artist
+export interface ArtistCorrectionResponse {
+  corrections: { correction: { artist: { name: string; mbid: string; url: string }; '@attr': { index: string } } };
+}
+export interface ArtistInfoResponse {
+  artist: {
+    name: string; mbid?: string; url: string; image: Image[];
+    streamable: string; ontour: string;
+    stats: { listeners: string; playcount: string };
+    similar: { artist: { name: string; url: string; image: Image[] }[] };
+    tags: { tag: { name: string; url: string }[] };
+    bio: { links: { link: { text: string; rel: string; href: string } }; published: string; summary: string; content: string };
+  };
+}
+export interface ArtistSimilarResponse {
+  similarartists: { artist: { name: string; mbid?: string; match: string; url: string; image: Image[]; streamable: string }[]; '@attr': { artist: string } };
+}
+export interface ArtistTagsResponse {
+  tags: { tag: { name: string; url: string }[]; '@attr': { artist: string } };
+}
+export interface ArtistTopAlbumsResponse {
+  topalbums: { album: { name: string; mbid?: string; url: string; playcount: number; artist: { name: string; mbid: string; url: string }; image: Image[] }[]; '@attr': AttributesPage };
+}
+export interface ArtistTopTagsResponse {
+  toptags: { tag: { name: string; count: number; url: string }[]; '@attr': { artist: string } };
+}
+export interface ArtistTopTracksResponse {
+  toptracks: { track: { name: string; mbid?: string; url: string; playcount: string; listeners: string; artist: { name: string; mbid: string; url: string }; image: Image[] }[]; '@attr': AttributesPage };
+}
+export interface ArtistSearchResponse {
+  results: {
+    artistmatches: { artist: { name: string; mbid?: string; url: string; image: Image[]; streamable: string; listeners: string }[] };
+    '@attr': { for: string };
+    'opensearch:totalResults': string;
+    'opensearch:startIndex': string;
+    'opensearch:itemsPerPage': string;
+  };
+}
+
+// Auth
+export interface AuthSessionResponse {
+  session: { name: string; key: string; subscriber: number };
+}
+export interface AuthMobileSessionResponse {
+  session: { name: string; key: string; subscriber: number };
+}
+
+// Geo
+export interface GeoTopArtistsResponse {
+  topartists: { artist: { name: string; mbid?: string; url: string; image: Image[]; streamable: string; listeners: string }[]; '@attr': { country: string; page: string; perPage: string; totalPages: string; total: string } };
+}
+export interface GeoTopTracksResponse {
+  tracks: { track: { name: string; mbid?: string; url: string; listeners: string; image: Image[]; artist: { name: string; mbid: string; url: string } }[]; '@attr': { country: string; page: string; perPage: string; totalPages: string; total: string } };
+}
+
+// Library
+export interface LibraryArtistsResponse {
+  artists: { artist: { name: string; mbid?: string; url: string; image: Image[]; streamable: string; tagcount: string; playcount: string }[]; '@attr': AttributesPage };
+}
+
+// Tag
+export interface TagInfoResponse {
+  tag: { name: string; reach: string; total: string; wiki?: { summary: string; content: string } };
+}
+export interface TagSimilarResponse {
+  similartags: { tag: { name: string; url: string; streamable: string }[]; '@attr': { tag: string } };
+}
+export interface TagTopAlbumsResponse {
+  albums: { album: { name: string; mbid?: string; url: string; artist: { name: string; mbid: string; url: string }; image: Image[] }[]; '@attr': { tag: string; page: string; perPage: string; totalPages: string; total: string } };
+}
+export interface TagTopArtistsResponse {
+  topartists: { artist: { name: string; mbid?: string; url: string; image: Image[]; streamable: string }[]; '@attr': { tag: string; page: string; perPage: string; totalPages: string; total: string } };
+}
+export interface TagTopTagsResponse {
+  toptags: { tag: { name: string; count: number; reach: number }[]; '@attr': { offset: number; num_res: number; total: number } };
+}
+export interface TagWeeklyChartListResponse {
+  weeklychartlist: { chart: { '#text': string; from: string; to: string }[]; '@attr': { tag: string } };
+}
+
+// Track
+export interface TrackCorrectionResponse {
+  corrections: { correction: { track: { name: string; mbid: string; url: string; artist: { name: string; mbid: string; url: string } }; '@attr': { index: string; artistcorrected: string; trackcorrected: string } } };
+}
+export interface TrackInfoResponse {
+  track: {
+    name: string; mbid?: string; url: string; duration: string;
+    streamable: { '#text': string; fulltrack: string };
+    listeners: string; playcount: string;
+    artist: { name: string; mbid: string; url: string };
+    album?: { artist: string; title: string; mbid?: string; url: string; image: Image[]; '@attr'?: { position: string } };
+    toptags: { tag: { name: string; url: string }[] };
+    wiki?: { published: string; summary: string; content: string };
+  };
+}
+export interface TrackSimilarResponse {
+  similartracks: { track: { name: string; mbid?: string; match: number; url: string; duration: number; streamable: { '#text': string; fulltrack: string }; artist: { name: string; mbid: string; url: string }; image: Image[] }[]; '@attr': { artist: string } };
+}
+export interface TrackTagsResponse {
+  tags: { tag: { name: string; url: string }[]; '@attr': { artist: string; track: string } };
+}
+export interface TrackTopTagsResponse {
+  toptags: { tag: { name: string; count: number; url: string }[]; '@attr': { artist: string; track: string } };
+}
+export interface TrackSearchResponse {
+  results: {
+    trackmatches: { track: { name: string; artist: string; mbid?: string; url: string; streamable: string; listeners: string; image: Image[] }[] };
+    '@attr': { for: string };
+    'opensearch:totalResults': string;
+    'opensearch:startIndex': string;
+    'opensearch:itemsPerPage': string;
+  };
+}
+export interface ScrobbleResponse {
+  scrobbles: { scrobble: { track: { '#text': string; corrected: string }; artist: { '#text': string; corrected: string }; album: { '#text': string; corrected: string }; timestamp: string; ignoredMessage: { code: string; '#text': string } }; '@attr': { accepted: number; ignored: number } };
+}
+
+// User
+export interface UserPersonalTagsResponse {
+  taggings: {
+    artists?: { artist: Artist[] };
+    albums?: { album: Album[] };
+    tracks?: { track: Track[] };
+    '@attr': { user: string; tag: string; page: string; perPage: string; totalPages: string; total: string };
+  };
 }

@@ -1,5 +1,19 @@
 # Changelog
 
+## 1.5.6
+
+- feat(album): implement `album.getInfo`, `album.getTags`, `album.getTopTags`, `album.search`, `album.addTags`, `album.removeTag`
+- feat(artist): implement `artist.getCorrection`, `artist.getInfo`, `artist.getSimilar`, `artist.getTags`, `artist.getTopAlbums`, `artist.getTopTags`, `artist.getTopTracks`, `artist.search`, `artist.addTags`, `artist.removeTag`
+- feat(auth): implement `auth.getMobileSession`, `auth.getSession`
+- feat(geo): implement `geo.getTopArtists`, `geo.getTopTracks`
+- feat(library): implement `library.getArtists`
+- feat(tag): implement `tag.getInfo`, `tag.getSimilar`, `tag.getTopAlbums`, `tag.getTopArtists`, `tag.getTopTags`, `tag.getWeeklyChartList`
+- feat(track): implement `track.getCorrection`, `track.getInfo`, `track.getSimilar`, `track.getTags`, `track.getTopTags`, `track.search`, `track.love`, `track.unlove`, `track.addTags`, `track.removeTag`, `track.scrobble`, `track.updateNowPlaying`
+- feat(user): implement `user.getFriends`, `user.getPersonalTags`, `user.getTopTags`
+- feat(request): add `signedRequest` for authenticated POST methods (MD5 API signature)
+- feat(createOptions): extend with all new optional parameters (`artist`, `album`, `track`, `country`, `autocorrect`, `mbid`, `lang`, `sk`, `token`, `tags`, `timestamp`, `username`, `password`)
+- feat(types): add response types for all new methods
+
 ## 1.5.5
 
 - feat(getRecentTracks): add optional `from` parameter (Unix timestamp) to support date-range filtering
