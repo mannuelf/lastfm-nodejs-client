@@ -36,9 +36,11 @@ export interface RecentTracks {
   '@attr': AttrLimit;
 }
 
-export interface TagsResponse {
-  tag: Tag[];
-  '@attr': Attr;
+export interface ChartTopTagsResponse {
+  tags: {
+    tag: Tag[];
+    '@attr': AttributesPage;
+  };
 }
 
 export interface Tag {
@@ -70,8 +72,17 @@ export interface Friends {
 }
 
 export interface ChartTopArtistResponse {
-  artists: Artist[];
-  '@attr': AttributesPage;
+  artists: {
+    artist: Artist[];
+    '@attr': AttributesPage;
+  };
+}
+
+export interface ChartTopTracksResponse {
+  tracks: {
+    track: Track[];
+    '@attr': AttributesPage;
+  };
 }
 export interface TopArtistsResponse {
   topartists: TopArtists;

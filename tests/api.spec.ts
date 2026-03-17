@@ -177,15 +177,14 @@ test.describe('Last.fm API Integration', () => {
   });
 
   test.describe('chart.getTopArtists', () => {
-    // TODO: response shape from live API doesn't match ChartTopArtistResponse type — needs investigation
-    test.skip('returns valid global top artists', async () => {
+    test('returns valid global top artists', async () => {
       const data = await lastFm.chart.chartTopArtists(method.chart.getTopArtists, '', '', '1', '5');
 
       expect(data.artists).toBeDefined();
-      expect(Array.isArray(data.artists)).toBeTruthy();
-      expect(data.artists.length).toBeGreaterThan(0);
+      expect(Array.isArray(data.artists.artist)).toBeTruthy();
+      expect(data.artists.artist.length).toBeGreaterThan(0);
 
-      const first = data.artists[0];
+      const first = data.artists.artist[0];
       if (first) {
         expect(first.name).toBeDefined();
         expect(first.url).toBeDefined();
@@ -194,15 +193,14 @@ test.describe('Last.fm API Integration', () => {
   });
 
   test.describe('chart.getTopTracks', () => {
-    // TODO: response shape from live API doesn't match TopTrackResponse type — needs investigation
-    test.skip('returns valid global top tracks', async () => {
+    test('returns valid global top tracks', async () => {
       const data = await lastFm.chart.chartTopTracks(method.chart.getTopTracks, '1');
 
-      expect(data.toptracks).toBeDefined();
-      expect(Array.isArray(data.toptracks.track)).toBeTruthy();
-      expect(data.toptracks.track.length).toBeGreaterThan(0);
+      expect(data.tracks).toBeDefined();
+      expect(Array.isArray(data.tracks.track)).toBeTruthy();
+      expect(data.tracks.track.length).toBeGreaterThan(0);
 
-      const first = data.toptracks.track[0];
+      const first = data.tracks.track[0];
       if (first) {
         expect(first.name).toBeDefined();
         expect(first.url).toBeDefined();
@@ -212,15 +210,14 @@ test.describe('Last.fm API Integration', () => {
   });
 
   test.describe('chart.getTopTags', () => {
-    // TODO: response shape from live API doesn't match TagsResponse type — needs investigation
-    test.skip('returns valid global top tags', async () => {
+    test('returns valid global top tags', async () => {
       const data = await lastFm.chart.chartTopTags(method.chart.getTopTags, '1');
 
-      expect(data.tag).toBeDefined();
-      expect(Array.isArray(data.tag)).toBeTruthy();
-      expect(data.tag.length).toBeGreaterThan(0);
+      expect(data.tags).toBeDefined();
+      expect(Array.isArray(data.tags.tag)).toBeTruthy();
+      expect(data.tags.tag.length).toBeGreaterThan(0);
 
-      const first = data.tag[0];
+      const first = data.tags.tag[0];
       if (first) {
         expect(first.name).toBeDefined();
         expect(first.url).toBeDefined();
