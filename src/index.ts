@@ -74,7 +74,85 @@ import { trackUpdateNowPlaying } from './track/updateNowPlaying.js';
 // User
 import { userGetPersonalTags } from './user/getPersonalTags.js';
 
-const LastFmApi = () => {
+export type LastFmApiReturn = {
+  auth: typeof auth;
+  album: {
+    albumGetInfo: typeof albumGetInfo;
+    albumGetTags: typeof albumGetTags;
+    albumGetTopTags: typeof albumGetTopTags;
+    albumSearch: typeof albumSearch;
+    albumAddTags: typeof albumAddTags;
+    albumRemoveTag: typeof albumRemoveTag;
+  };
+  artist: {
+    artistGetCorrection: typeof artistGetCorrection;
+    artistGetInfo: typeof artistGetInfo;
+    artistGetSimilar: typeof artistGetSimilar;
+    artistGetTags: typeof artistGetTags;
+    artistGetTopAlbums: typeof artistGetTopAlbums;
+    artistGetTopTags: typeof artistGetTopTags;
+    artistGetTopTracks: typeof artistGetTopTracks;
+    artistSearch: typeof artistSearch;
+    artistAddTags: typeof artistAddTags;
+    artistRemoveTag: typeof artistRemoveTag;
+  };
+  authGetMobileSession: typeof authGetMobileSession;
+  authGetSession: typeof authGetSession;
+  chart: {
+    chartTopArtists: typeof chartTopArtists;
+    chartTopTracks: typeof chartTopTracks;
+    chartTopTags: typeof chartTopTags;
+  };
+  geo: {
+    geoGetTopArtists: typeof geoGetTopArtists;
+    geoGetTopTracks: typeof geoGetTopTracks;
+  };
+  library: {
+    libraryGetArtists: typeof libraryGetArtists;
+  };
+  tag: {
+    tagTopTracks: typeof tagTopTracks;
+    tagGetInfo: typeof tagGetInfo;
+    tagGetSimilar: typeof tagGetSimilar;
+    tagGetTopAlbums: typeof tagGetTopAlbums;
+    tagGetTopArtists: typeof tagGetTopArtists;
+    tagGetTopTags: typeof tagGetTopTags;
+    tagGetWeeklyChartList: typeof tagGetWeeklyChartList;
+  };
+  track: {
+    trackGetCorrection: typeof trackGetCorrection;
+    trackGetInfo: typeof trackGetInfo;
+    trackGetSimilar: typeof trackGetSimilar;
+    trackGetTags: typeof trackGetTags;
+    trackGetTopTags: typeof trackGetTopTags;
+    trackSearch: typeof trackSearch;
+    trackLove: typeof trackLove;
+    trackUnlove: typeof trackUnlove;
+    trackAddTags: typeof trackAddTags;
+    trackRemoveTag: typeof trackRemoveTag;
+    trackScrobble: typeof trackScrobble;
+    trackUpdateNowPlaying: typeof trackUpdateNowPlaying;
+  };
+  user: {
+    userGetPersonalTags: typeof userGetPersonalTags;
+  };
+  config: typeof config;
+  getFriends: typeof getFriends;
+  getInfo: typeof getInfo;
+  getLovedTracks: typeof getLovedTracks;
+  getRecentTracks: typeof getRecentTracks;
+  getTopAlbums: typeof getTopAlbums;
+  getTopArtists: typeof getTopArtists;
+  getUserTopTags: typeof getUserTopTags;
+  getTopTracks: typeof getTopTracks;
+  getWeeklyAlbumChart: typeof getWeeklyAlbumChart;
+  getWeeklyArtistChart: typeof getWeeklyArtistChart;
+  getWeeklyChartList: typeof getWeeklyChartList;
+  getWeeklyTrackChart: typeof getWeeklyTrackChart;
+  method: typeof method;
+};
+
+const LastFmApi = (): LastFmApiReturn => {
   return {
     auth,
     album: {
