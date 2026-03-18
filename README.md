@@ -5,129 +5,183 @@
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/ba3b73c24e06433fabe0efed8b43d026)](https://www.codacy.com/gh/mannuelf/lastfm-nodejs-client/dashboard?utm_source=github.com&utm_medium=referral&utm_content=mannuelf/lastfm-nodejs-client&utm_campaign=Badge_Grade)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-A Node JS wrapper client for fetching public data from [LastFm API](https://www.last.fm/api).
+A TypeScript client for the [Last.fm API](https://www.last.fm/api). Works in Node.js ≥18 and all modern browsers — no polyfills required.
 
-Fetch server side or client side, thanks to [cross-fetch](https://github.com/lquixada/cross-fetch)
-
-## How to use the client
-
-Install the npm package in your project.
+## Install
 
 ```bash
-pnpm install
+pnpm add lastfm-nodejs-client
 ```
 
-Consider [PNPM](https://pnpm.io/) ▶️
-
-### Import it
-
-Import the client module:
-
-```js
-import { lastFm } from 'lastfm-nodejs-client';
+```bash
+npm install lastfm-nodejs-client
 ```
 
-Import the Types as type:
-
-```js
-import type {
-  Artist,
-  Track,
-  User,
-  WeeklyAlbum,
-} from 'lastfm-nodejs-client/dist/@types/lastfm.types';
+```bash
+yarn add lastfm-nodejs-client
 ```
 
-_Working on getting these into [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)_
+## Setup
 
-### Use it
+Create a `.env` file in your project root:
 
-```js
+```bash
+LASTFM_API_BASE_URL="https://ws.audioscrobbler.com/2.0/"
+LASTFM_USER="your_username"
+LASTFM_API_KEY="your_api_key"
+LASTFM_APPNAME="your_app_name"
+LASTFM_SHARED_SECRET="your_shared_secret"
+```
+
+Get your API key at [last.fm/api/account/create](https://www.last.fm/api/account/create).
+
+## Usage
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+
 const lastFm = LastFmApi();
-const { config, method } = lastFm;
-
-const getTopArtists = async () => {
-  const data = await lastFm.getTopArtists(
-    method.user.top_artists,
-    config.username,
-    'overall',
-    '200',
-  );
-  const { topartists } = data;
-  return topartists;
-};
+const { method } = lastFm;
 ```
 
-🚀 Gives you:
+### Get a user's top artists
 
-![user](https://res.cloudinary.com/mannuel/image/upload/v1668059500/topartist.png)
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+import type { TopArtistsResponse } from 'lastfm-nodejs-client';
 
-## Developing client
+const lastFm = LastFmApi();
+const { method } = lastFm;
 
-Written in TypeScript, compiles down to ES2015, provides the types for the lastFm entities.
+const data: TopArtistsResponse = await lastFm.getTopArtists(
+  method.user.getTopArtists,
+  'your_username',
+  'overall', // period: overall | 7day | 1month | 3month | 6month | 12month
+  '10',      // limit
+);
 
-## Fork repo
+console.log(data.topartists.artist);
+```
+
+### Get a user's recent tracks
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+import type { RecentTracksResponse } from 'lastfm-nodejs-client';
+
+const lastFm = LastFmApi();
+const { method } = lastFm;
+
+const data: RecentTracksResponse = await lastFm.getRecentTracks(
+  method.user.getRecentTracks,
+  'your_username',
+  '10', // limit
+);
+
+console.log(data.recenttracks.track);
+```
+
+### Get artist info
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+import type { ArtistInfoResponse } from 'lastfm-nodejs-client';
+
+const lastFm = LastFmApi();
+const { method } = lastFm;
+
+const data: ArtistInfoResponse = await lastFm.artist.artistGetInfo(
+  method.artist.getInfo,
+  'Radiohead',
+);
+
+console.log(data.artist);
+```
+
+### Get album info
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+import type { AlbumInfoResponse } from 'lastfm-nodejs-client';
+
+const lastFm = LastFmApi();
+const { method } = lastFm;
+
+const data: AlbumInfoResponse = await lastFm.album.albumGetInfo(
+  method.album.getInfo,
+  'Radiohead',
+  'OK Computer',
+);
+
+console.log(data.album);
+```
+
+### Search for a track
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+import type { TrackSearchResponse } from 'lastfm-nodejs-client';
+
+const lastFm = LastFmApi();
+const { method } = lastFm;
+
+const data: TrackSearchResponse = await lastFm.track.trackSearch(
+  method.track.search,
+  'Creep',
+  'Radiohead', // optional artist filter
+  '5',         // limit
+);
+
+console.log(data.results.trackmatches.track);
+```
+
+### Love a track (authenticated)
+
+Requires a session key (`sk`) obtained via `auth.getMobileSession` or `auth.getSession`.
+
+```ts
+import LastFmApi from 'lastfm-nodejs-client';
+
+const lastFm = LastFmApi();
+const { method } = lastFm;
+
+await lastFm.track.trackLove(
+  method.track.love,
+  'Radiohead',
+  'Creep',
+  'your_session_key',
+);
+```
+
+## All available namespaces
+
+| Namespace | Methods |
+|-----------|---------|
+| `album` | `albumGetInfo`, `albumGetTags`, `albumGetTopTags`, `albumSearch`, `albumAddTags`, `albumRemoveTag` |
+| `artist` | `artistGetInfo`, `artistGetSimilar`, `artistGetTags`, `artistGetTopAlbums`, `artistGetTopTags`, `artistGetTopTracks`, `artistSearch`, `artistAddTags`, `artistRemoveTag`, `artistGetCorrection` |
+| `auth` | `getToken`, `getSession`, `getMobileSession` |
+| `chart` | `chartTopArtists`, `chartTopTracks`, `chartTopTags` |
+| `geo` | `geoGetTopArtists`, `geoGetTopTracks` |
+| `library` | `libraryGetArtists` |
+| `tag` | `tagGetInfo`, `tagGetSimilar`, `tagGetTopAlbums`, `tagGetTopArtists`, `tagGetTopTags`, `tagGetWeeklyChartList`, `tagTopTracks` |
+| `track` | `trackGetInfo`, `trackGetSimilar`, `trackGetTags`, `trackGetTopTags`, `trackSearch`, `trackLove`, `trackUnlove`, `trackAddTags`, `trackRemoveTag`, `trackScrobble`, `trackUpdateNowPlaying`, `trackGetCorrection` |
+| `user` | `userGetPersonalTags` |
+
+Legacy flat methods also available: `getTopArtists`, `getTopTracks`, `getRecentTracks`, `getLovedTracks`, `getInfo`, `getFriends`, `getUserTopTags`, `getWeeklyAlbumChart`, `getWeeklyArtistChart`, `getWeeklyChartList`, `getWeeklyTrackChart`, `getTopAlbums`.
+
+## Developing
 
 ```bash
 gh repo fork mannuelf/lastfm-nodejs-client
 ```
 
-What's gh? [Get it here](https://cli.github.com/manual/gh_repo_fork)
-
-### Postman collections
-
-A list of endpoints currently mapped to this client. Still under development, not feature complete.
-
-[View collections](https://documenter.getpostman.com/view/4217/2s8YKJELqJ) ▶️
-
-### ENV
-
-Create `.env` file in project root:
-
-You do not need an API key to query the public USER entity, add only base url and a username to env file.
-
 ```bash
-LASTFM_API_BASE_URL=""
-LASTFM_USER=""
-```
-
-For everything else you will need to include:
-
-```bash
-LASTFM_API_KEY=""
-LASTFM_APPNAME=""
-```
-
-Create them [here](https://www.last.fm/api/account/create).
-
-### Develop
-
-```bash
+pnpm install
 pnpm test
-```
-
-```bash
 pnpm lint
-pnpm lint-fix
-```
-
-### Build
-
-```bash
 pnpm build
 ```
 
-### Publish
+### Why I built this
 
-```bash
-pnpm prepare
-pnpm publish
-```
-
-### Why I built this?
-
-I was building a scrobbles page [https://mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and I thought others might want it to.
-
-### TODO
-
-- move types into [DefinitelyTyped](https://github.com/mannuelf/DefinitelyTyped)
+I was building a scrobbles page at [mannuelferreira.com/scrobbles](https://mannuelferreira.com/scrobbles) and thought others might find it useful.
