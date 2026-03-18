@@ -89,7 +89,7 @@ export interface Tag {
   wiki: Wiki;
 }
 
-export interface Wiki {}
+export type Wiki = Record<string, unknown>;
 
 export interface LoveTracksResponse {
   lovedtracks: LovedTracks;
