@@ -18,7 +18,7 @@ interface Config {
  * LASTFM_SHARED_SECRET=your_shared_secret
  * LASTFM_USER=your_username
  */
-export const config = {
+export const config: Config = {
   api_key: `${process.env.LASTFM_API_KEY}`,
   app_name: `${process.env.LASTFM_APPNAME}`,
   base_url: `${process.env.LASTFM_API_BASE_URL}`,
@@ -28,4 +28,4 @@ export const config = {
   },
   share_secret: `${process.env.LASTFM_SHARED_SECRET}`,
   username: `${process.env.LASTFM_USER}`,
-} satisfies Config;
+};

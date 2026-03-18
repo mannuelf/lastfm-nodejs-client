@@ -94,7 +94,7 @@ export interface Method {
   user: UserMethod;
 }
 
-export const method = {
+export const method: Method = {
   album: {
     addTags: 'album.addTags',
     getInfo: 'album.getInfo',
@@ -170,4 +170,4 @@ export const method = {
     getWeeklyChartList: 'user.getWeeklyChartList',
     getWeeklyTrackChart: 'user.getWeeklyTrackChart',
   },
-} satisfies Method;
+};
