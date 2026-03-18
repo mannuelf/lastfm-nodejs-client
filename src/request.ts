@@ -1,5 +1,5 @@
-import { createHash } from 'node:crypto';
 import { config } from './config.js';
+import { md5 } from './md5.js';
 
 interface RequestOptions {
   method: string;
@@ -144,7 +144,7 @@ export const signedRequest = async <Response>(options: RequestOptions, secret: s
   // Generate signature: sort keys alphabetically, concatenate key+value, append secret, MD5
   const sortedKeys = Object.keys(sigParams).sort();
   const sigString = sortedKeys.map(k => `${k}${sigParams[k]}`).join('') + secret;
-  const apiSig = createHash('md5').update(sigString).digest('hex');
+  const apiSig = md5(sigString);
 
   // Build POST body
   for (const [k, v] of Object.entries(sigParams)) {
