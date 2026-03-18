@@ -5,6 +5,13 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/@types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/@types/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -15,7 +22,7 @@
     "prepare": "npm run build",
     "prepublish": "npm test && npm run lint && npm run prepare",
     "clean": "rimraf dist",
-    "release": "npm run prepublish && npm publish --access public",
+    "release": "npm run prepublish && npm publish --access public && npx jsr publish",
     "test": "pnpm exec playwright test --reporter=list"
   },
   "keywords": [
