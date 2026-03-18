@@ -21,6 +21,15 @@ npm install lastfm-nodejs-client
 yarn add lastfm-nodejs-client
 ```
 
+```bash
+bun add lastfm-nodejs-client
+```
+
+```ts
+// Deno
+import LastFmApi from 'jsr:@mannuelf/lastfm-nodejs-client';
+```
+
 ## Setup
 
 Create a `.env` file in your project root:
