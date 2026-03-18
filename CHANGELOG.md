@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.6.0
+
+- feat: browser compatibility — replace `node:crypto` MD5 with pure TypeScript implementation using `TextEncoder` and `DataView`; client now works in Node.js >=18 and all modern browsers without polyfills
+- chore: upgrade ESLint 8 → 9 with flat config (`eslint.config.js`), migrate from `@typescript-eslint/eslint-plugin` + `@typescript-eslint/parser` v6 to unified `typescript-eslint@8.57.1`
+- chore: remove unused/deprecated dev dependencies (`eslint-config-standard-with-typescript`, `eslint-plugin-import`, `eslint-plugin-n`, `eslint-plugin-promise`)
+- fix: convert empty `Wiki` interface to `type Wiki = Record<string, unknown>`
+
 ## 1.5.6
 
 - feat(album): implement `album.getInfo`, `album.getTags`, `album.getTopTags`, `album.search`, `album.addTags`, `album.removeTag`
