@@ -1,3 +1,4 @@
+/** Last.fm `album.*` method name strings. */
 interface AlbumMethod {
   addTags: string;
   getInfo: string;
@@ -7,6 +8,7 @@ interface AlbumMethod {
   search: string;
 }
 
+/** Last.fm `artist.*` method name strings. */
 interface ArtistMethod {
   addTags: string;
   getCorrection: string;
@@ -20,27 +22,32 @@ interface ArtistMethod {
   search: string;
 }
 
+/** Last.fm `auth.*` method name strings. */
 interface AuthMethod {
   getMobileSession: string;
   getSession: string;
   getToken: string;
 }
 
+/** Last.fm `chart.*` method name strings. */
 interface ChartMethod {
   getTopArtists: string;
   getTopTags: string;
   getTopTracks: string;
 }
 
+/** Last.fm `geo.*` method name strings. */
 interface GeoMethod {
   getTopArtists: string;
   getTopTracks: string;
 }
 
+/** Last.fm `library.*` method name strings. */
 interface LibraryMethod {
   getArtists: string;
 }
 
+/** Last.fm `tag.*` method name strings. */
 interface TagMethod {
   getInfo: string;
   getSimilar: string;
@@ -51,6 +58,7 @@ interface TagMethod {
   getWeeklyChartList: string;
 }
 
+/** Last.fm `track.*` method name strings. */
 interface TrackMethod {
   addTags: string;
   getCorrection: string;
@@ -66,6 +74,7 @@ interface TrackMethod {
   updateNowPlaying: string;
 }
 
+/** Last.fm `user.*` method name strings. */
 interface UserMethod {
   getFriends: string;
   getInfo: string;
@@ -82,6 +91,10 @@ interface UserMethod {
   getWeeklyTrackChart: string;
 }
 
+/**
+ * Namespace map of all supported Last.fm API method name strings.
+ * @see {@link method} for the singleton constant of this type.
+ */
 export interface Method {
   album: AlbumMethod;
   artist: ArtistMethod;
@@ -94,6 +107,17 @@ export interface Method {
   user: UserMethod;
 }
 
+/**
+ * Constant map of all Last.fm API method name strings, organised by namespace.
+ *
+ * Pass the appropriate value to API functions as the `method` parameter.
+ *
+ * @example
+ * ```ts
+ * const api = LastFmApi();
+ * const info = await api.getInfo(api.method.user.getInfo, 'username');
+ * ```
+ */
 export const method: Method = {
   album: {
     addTags: 'album.addTags',

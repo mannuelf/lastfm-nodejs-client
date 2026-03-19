@@ -3,10 +3,14 @@ import { createOptions } from './createOptions.js';
 import request from './request.js';
 
 /**
- * GET: Love Tracks - LastFM
+ * Get the last 50 tracks loved by a user on Last.fm.
  *
- * https://www.last.fm/api/show/user.getLovedTracks
- * @returns Loved Tracks;
+ * @see https://www.last.fm/api/show/user.getLovedTracks
+ * @param method - The Last.fm API method string (`method.user.getLovedTracks`)
+ * @param user - The Last.fm username
+ * @param period - The time period to retrieve loved tracks for
+ * @param limit - Number of results per page
+ * @returns The user's loved tracks
  */
 export async function getLovedTracks(
   method: string,

@@ -3,10 +3,13 @@ import { createOptions } from './createOptions.js';
 import request from './request.js';
 
 /**
- * GET: Friends - LastFM
+ * Get a list of the user's friends on Last.fm.
  *
- * https://www.last.fm/api/show/user.getFriends
- * @returns Friends of a user
+ * @see https://www.last.fm/api/show/user.getFriends
+ * @param method - The Last.fm API method string (`method.user.getFriends`)
+ * @param user - The Last.fm username
+ * @param limit - Number of results per page
+ * @returns A list of the user's friends with their profile information
  */
 export async function getFriends(
   method: string,

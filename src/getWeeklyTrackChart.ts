@@ -3,10 +3,14 @@ import { createOptions } from './createOptions.js';
 import request from './request.js';
 
 /**
- * GET: Weekly track chart - LastFM
+ * Get a list of the tracks in a user's weekly track chart on Last.fm.
  *
- * https://www.last.fm/api/show/user.getWeeklyTrackChart
- * @returns Weekly track chart
+ * @see https://www.last.fm/api/show/user.getWeeklyTrackChart
+ * @param method - The Last.fm API method string (`method.user.getWeeklyTrackChart`)
+ * @param user - The Last.fm username
+ * @param period - The time period for the chart
+ * @param limit - Number of results per page
+ * @returns The user's weekly track chart
  */
 export async function getWeeklyTrackChart(
   method: string,

@@ -1,6 +1,10 @@
 import { config } from './config.js';
 import { md5 } from './md5.js';
 
+/**
+ * Options passed to `request` and `signedRequest`.
+ * All fields correspond to Last.fm API query/body parameters.
+ */
 interface RequestOptions {
   method: string;
   user?: string;
@@ -24,6 +28,10 @@ interface RequestOptions {
   password?: string;
 }
 
+/**
+ * Last.fm API error codes.
+ * @see https://www.last.fm/api/errorcodes
+ */
 enum ErrorResponse {
   InvalidService = 2,
   InvalidMethod = 3,
@@ -41,6 +49,13 @@ enum ErrorResponse {
   RateLimitExceeded = 29,
 }
 
+/**
+ * Assembles the full Last.fm API request URL from the given options,
+ * appending the API key and JSON format automatically.
+ *
+ * @param options - Request options containing the method and any query parameters
+ * @returns The fully-formed URL string
+ */
 const buildUrl = (options: RequestOptions): string => {
   const params = new URLSearchParams();
 
@@ -89,6 +104,14 @@ const ErrorMessages: Record<number, string> = {
   [ErrorResponse.RateLimitExceeded]: 'Rate limit exceeded',
 };
 
+/**
+ * Performs a GET request to the Last.fm API.
+ *
+ * Throws an `Error` on HTTP failure or if the Last.fm response body contains an error code.
+ *
+ * @param options - Request options specifying the method and query parameters
+ * @returns The parsed JSON response typed as `Response`
+ */
 const request = async <Response>(options: RequestOptions): Promise<Response> => {
   const url = buildUrl(options);
 
@@ -112,6 +135,17 @@ const request = async <Response>(options: RequestOptions): Promise<Response> => 
   return body as Response;
 };
 
+/**
+ * Performs an MD5-signed POST request to the Last.fm API.
+ *
+ * Used for write operations (scrobble, love, addTags, auth sessions).
+ * Generates an `api_sig` by sorting all parameters alphabetically, concatenating
+ * `key+value` pairs, appending the shared secret, and MD5-hashing the result.
+ *
+ * @param options - Request options specifying the method and POST body parameters
+ * @param secret - The Last.fm shared secret used to generate the API signature
+ * @returns The parsed JSON response typed as `Response`
+ */
 export const signedRequest = async <Response>(options: RequestOptions, secret: string): Promise<Response> => {
   const params = new URLSearchParams();
 

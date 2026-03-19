@@ -74,6 +74,10 @@ import { trackUpdateNowPlaying } from './track/updateNowPlaying.js';
 // User
 import { userGetPersonalTags } from './user/getPersonalTags.js';
 
+/**
+ * The return type of {@link LastFmApi}, containing all namespaced API methods
+ * and the {@link method} constant for method name strings.
+ */
 export type LastFmApiReturn = {
   auth: typeof auth;
   album: {
@@ -152,6 +156,27 @@ export type LastFmApiReturn = {
   method: typeof method;
 };
 
+/**
+ * Creates a Last.fm API client with all supported methods organised by namespace.
+ *
+ * Use the {@link method} constant (exposed as `api.method`) to pass the correct
+ * method string to each API function.
+ *
+ * @example
+ * ```ts
+ * import LastFmApi from 'lastfm-nodejs-client';
+ *
+ * const api = LastFmApi();
+ *
+ * // Read-only: get a user's top artists
+ * const topArtists = await api.getTopArtists(api.method.user.getTopArtists, 'username', '7day', '10');
+ *
+ * // Write: scrobble a track (requires session key)
+ * await api.track.trackScrobble(api.method.track.scrobble, 'Artist', 'Track', String(Date.now() / 1000 | 0), 'Album', sk);
+ * ```
+ *
+ * @returns An object containing all Last.fm API methods organised by namespace.
+ */
 const LastFmApi = (): LastFmApiReturn => {
   return {
     auth,

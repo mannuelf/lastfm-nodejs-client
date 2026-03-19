@@ -7,6 +7,14 @@
 
 A TypeScript client for the [Last.fm API](https://www.last.fm/api). Works in Node.js ≥18 and all modern browsers — no polyfills required.
 
+## Why use this
+
+**Zero dependencies.** The library ships no third-party runtime dependencies. HTTP requests use the native `fetch` API built into Node.js ≥18, and API signatures are generated with the built-in `node:crypto` module. Installing it won't bloat your `node_modules` or introduce supply-chain risk.
+
+**Fully typed.** Every API response has a hand-written TypeScript interface, so you get autocomplete and type safety straight out of the box — no extra `@types` packages needed.
+
+**Dual ESM + CJS.** The package ships both ES module and CommonJS builds, so it works in any Node.js project regardless of whether you use `import` or `require`.
+
 ## Install
 
 ```bash

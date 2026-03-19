@@ -3,10 +3,14 @@ import { createOptions } from './createOptions.js';
 import request from './request.js';
 
 /**
- * GET: Recent Tracks - LastFM
+ * Get a list of the recent tracks listened to by a user on Last.fm.
  *
- * https://www.last.fm/api/show/user.getRecentTracks
- * @returns Recent Tracks
+ * @see https://www.last.fm/api/show/user.getRecentTracks
+ * @param method - The Last.fm API method string (`method.user.getRecentTracks`)
+ * @param user - The Last.fm username
+ * @param limit - Number of results per page
+ * @param from - Unix timestamp; only return tracks scrobbled after this time
+ * @returns The user's recent tracks including any currently playing track
  */
 export async function getRecentTracks(
   method: string,

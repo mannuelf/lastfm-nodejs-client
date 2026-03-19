@@ -3,14 +3,17 @@ import { createOptions } from './createOptions.js';
 import request from './request.js';
 
 /**
- * POST: Auth - LastFM
+ * Fetch an unauthenticated token for the web auth flow.
  *
- * https://www.last.fm/api/show/auth.getToken
+ * Tokens are API-account-specific, valid for 60 minutes, and consumed
+ * once a session is created via `auth.getSession`.
  *
- * Authentication tokens are API account specific.
- * They are valid for 60 minutes from the moment they are granted.
- * Can only used once (they are consumed when a session is created).
- * @returns Auth token
+ * @see https://www.last.fm/api/show/auth.getToken
+ * @param method - The Last.fm API method string (`method.auth.getToken`)
+ * @param user - The Last.fm username
+ * @param period - The time period parameter
+ * @param limit - The limit parameter
+ * @returns An unauthenticated token to redirect the user to the Last.fm auth page
  */
 export async function auth(
   method: string,
