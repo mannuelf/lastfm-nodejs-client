@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.6.1 - 2026-03-19
+
+- docs: add JSDoc symbol documentation (`@param`, `@returns`, `@see`) to all exported functions, interfaces, and the `method` constant across every namespace — documentation now surfaces in editor hover tooltips and on the JSR package page
+- docs: update README with "Why use this" section covering zero dependencies, full TypeScript types, and dual ESM/CJS support
+
 ## 1.6.0
 
 - feat: browser compatibility — replace `node:crypto` MD5 with pure TypeScript implementation using `TextEncoder` and `DataView`; client now works in Node.js >=18 and all modern browsers without polyfills
