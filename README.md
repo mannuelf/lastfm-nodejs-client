@@ -66,7 +66,7 @@ const data: TopArtistsResponse = await lastFm.getTopArtists(
   method.user.getTopArtists,
   'your_username',
   'overall', // period: overall | 7day | 1month | 3month | 6month | 12month
-  '10',      // limit
+  '10', // limit
 );
 
 console.log(data.topartists.artist);
@@ -138,7 +138,7 @@ const data: TrackSearchResponse = await lastFm.track.trackSearch(
   method.track.search,
   'Creep',
   'Radiohead', // optional artist filter
-  '5',         // limit
+  '5', // limit
 );
 
 console.log(data.results.trackmatches.track);
@@ -154,27 +154,22 @@ import LastFmApi from 'lastfm-nodejs-client';
 const lastFm = LastFmApi();
 const { method } = lastFm;
 
-await lastFm.track.trackLove(
-  method.track.love,
-  'Radiohead',
-  'Creep',
-  'your_session_key',
-);
+await lastFm.track.trackLove(method.track.love, 'Radiohead', 'Creep', 'your_session_key');
 ```
 
 ## All available namespaces
 
-| Namespace | Methods |
-|-----------|---------|
-| `album` | `albumGetInfo`, `albumGetTags`, `albumGetTopTags`, `albumSearch`, `albumAddTags`, `albumRemoveTag` |
-| `artist` | `artistGetInfo`, `artistGetSimilar`, `artistGetTags`, `artistGetTopAlbums`, `artistGetTopTags`, `artistGetTopTracks`, `artistSearch`, `artistAddTags`, `artistRemoveTag`, `artistGetCorrection` |
-| `auth` | `getToken`, `getSession`, `getMobileSession` |
-| `chart` | `chartTopArtists`, `chartTopTracks`, `chartTopTags` |
-| `geo` | `geoGetTopArtists`, `geoGetTopTracks` |
-| `library` | `libraryGetArtists` |
-| `tag` | `tagGetInfo`, `tagGetSimilar`, `tagGetTopAlbums`, `tagGetTopArtists`, `tagGetTopTags`, `tagGetWeeklyChartList`, `tagTopTracks` |
-| `track` | `trackGetInfo`, `trackGetSimilar`, `trackGetTags`, `trackGetTopTags`, `trackSearch`, `trackLove`, `trackUnlove`, `trackAddTags`, `trackRemoveTag`, `trackScrobble`, `trackUpdateNowPlaying`, `trackGetCorrection` |
-| `user` | `userGetPersonalTags` |
+| Namespace | Methods                                                                                                                                                                                                           |
+| --------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `album`   | `albumGetInfo`, `albumGetTags`, `albumGetTopTags`, `albumSearch`, `albumAddTags`, `albumRemoveTag`                                                                                                                |
+| `artist`  | `artistGetInfo`, `artistGetSimilar`, `artistGetTags`, `artistGetTopAlbums`, `artistGetTopTags`, `artistGetTopTracks`, `artistSearch`, `artistAddTags`, `artistRemoveTag`, `artistGetCorrection`                   |
+| `auth`    | `getToken`, `getSession`, `getMobileSession`                                                                                                                                                                      |
+| `chart`   | `chartTopArtists`, `chartTopTracks`, `chartTopTags`                                                                                                                                                               |
+| `geo`     | `geoGetTopArtists`, `geoGetTopTracks`                                                                                                                                                                             |
+| `library` | `libraryGetArtists`                                                                                                                                                                                               |
+| `tag`     | `tagGetInfo`, `tagGetSimilar`, `tagGetTopAlbums`, `tagGetTopArtists`, `tagGetTopTags`, `tagGetWeeklyChartList`, `tagTopTracks`                                                                                    |
+| `track`   | `trackGetInfo`, `trackGetSimilar`, `trackGetTags`, `trackGetTopTags`, `trackSearch`, `trackLove`, `trackUnlove`, `trackAddTags`, `trackRemoveTag`, `trackScrobble`, `trackUpdateNowPlaying`, `trackGetCorrection` |
+| `user`    | `userGetPersonalTags`                                                                                                                                                                                             |
 
 Legacy flat methods also available: `getTopArtists`, `getTopTracks`, `getRecentTracks`, `getLovedTracks`, `getInfo`, `getFriends`, `getUserTopTags`, `getWeeklyAlbumChart`, `getWeeklyArtistChart`, `getWeeklyChartList`, `getWeeklyTrackChart`, `getTopAlbums`.
 
