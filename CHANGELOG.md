@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.7.0 - 2026-03-27
+
+- chore: upgrade ESLint 9.x → 10.1.0, @eslint/js 9.x → 10.0.1, typescript-eslint 8.57.1 → 8.57.2
+- chore: bump minimum Node.js version from 18 to 20 (required by ESLint 10)
+- chore: remove empty `dependencies` field and stale `rimraf` dependency
+- chore: close stale dependabot PR #91
+
 ## 1.6.1 - 2026-03-19
 
 - docs: add JSDoc symbol documentation (`@param`, `@returns`, `@see`) to all exported functions, interfaces, and the `method` constant across every namespace — documentation now surfaces in editor hover tooltips and on the JSR package page
